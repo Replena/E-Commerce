@@ -1,5 +1,13 @@
+import Navbar from "./components/Navbar";
+import Carousel from "./components/Carousel";
+
 function App() {
-  return <div>Hello World</div>;
+  return (
+    <div>
+      <Navbar />
+      <Carousel />
+    </div>
+  );
 }
 
 export default App;
