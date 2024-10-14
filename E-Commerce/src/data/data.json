@@ -1,0 +1,116 @@
+{
+  "navbar": {
+    "title": "Bandage",
+    "links": [
+      {
+        "name": "Home",
+        "href": "#"
+      },
+      {
+        "name": "About",
+        "href": "#"
+      },
+      {
+        "name": "Blog",
+        "href": "#"
+      },
+      {
+        "name": "Contact",
+        "href": "#"
+      },
+      {
+        "name": "Pages",
+        "href": "#"
+      }
+    ],
+    "mobileLinks": [
+      {
+        "name": "Home",
+        "href": "#"
+      },
+      {
+        "name": "Product",
+        "href": "#"
+      },
+      {
+        "name": "Pricing",
+        "href": "#"
+      },
+      {
+        "name": "Contact",
+        "href": "#"
+      }
+    ],
+    "dropdown": {
+      "shop": {
+        "name": "Shop",
+        "items": {
+          "kadın": [
+            { "name": "Bags", "href": "#" },
+            { "name": "Belts", "href": "#" },
+            { "name": "Cosmetics", "href": "#" },
+            { "name": "Hats", "href": "#" }
+          ],
+          "erkek": [
+            { "name": "Bags", "href": "#" },
+            { "name": "Belts", "href": "#" },
+            { "name": "Cosmetics", "href": "#" },
+            { "name": "Hats", "href": "#" }
+          ]
+        }
+      }
+    },
+    "auth": {
+      "login": {
+        "name": "Login",
+        "href": "#"
+      },
+      "register": {
+        "name": "Register",
+        "href": "#"
+      }
+    },
+    "contact": {
+      "phone": "(225) 555-0118",
+      "email": "michelle.rivera@example.com"
+    },
+    "socialMedia": {
+      "instagram": {
+        "href": "#",
+        "icon": "fa-brands fa-instagram"
+      },
+      "youtube": {
+        "href": "#",
+        "icon": "fa-brands fa-youtube"
+      },
+      "facebook": {
+        "href": "#",
+        "icon": "fa-brands fa-facebook"
+      },
+      "twitter": {
+        "href": "#",
+        "icon": "fa-brands fa-twitter"
+      }
+    }
+  },
+  "carousel": [
+    {
+      "season": "summer 2020",
+      "title": "New Collection",
+      "subtitle": "We know how large objects will act, but things on a small scale.",
+      "imageUrl": "https://picsum.photos/1920/800?random=1"
+    },
+    {
+      "season": "summer 2021",
+      "title": "Summer 2020",
+      "subtitle": "Check out our summer collections for your shopping experience.",
+      "imageUrl": "https://picsum.photos/1920/800?random=2"
+    },
+    {
+      "season": "winter 2024",
+      "title": "Winter 2020",
+      "subtitle": "Explore our winter collections and stay warm.",
+      "imageUrl": "https://picsum.photos/1920/800?random=3"
+    }
+  ]
+}
