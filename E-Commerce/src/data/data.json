@@ -2,44 +2,17 @@
   "navbar": {
     "title": "Bandage",
     "links": [
-      {
-        "name": "Home",
-        "href": "#"
-      },
-      {
-        "name": "About",
-        "href": "#"
-      },
-      {
-        "name": "Blog",
-        "href": "#"
-      },
-      {
-        "name": "Contact",
-        "href": "#"
-      },
-      {
-        "name": "Pages",
-        "href": "#"
-      }
+      { "name": "Home", "href": "#" },
+      { "name": "About", "href": "#" },
+      { "name": "Blog", "href": "#" },
+      { "name": "Contact", "href": "#" },
+      { "name": "Pages", "href": "#" }
     ],
     "mobileLinks": [
-      {
-        "name": "Home",
-        "href": "#"
-      },
-      {
-        "name": "Product",
-        "href": "#"
-      },
-      {
-        "name": "Pricing",
-        "href": "#"
-      },
-      {
-        "name": "Contact",
-        "href": "#"
-      }
+      { "name": "Home", "href": "#" },
+      { "name": "Product", "href": "#" },
+      { "name": "Pricing", "href": "#" },
+      { "name": "Contact", "href": "#" }
     ],
     "dropdown": {
       "shop": {
@@ -61,18 +34,13 @@
       }
     },
     "auth": {
-      "login": {
-        "name": "Login",
-        "href": "#"
-      },
-      "register": {
-        "name": "Register",
-        "href": "#"
-      }
+      "login": { "name": "Login", "href": "#" },
+      "register": { "name": "Register", "href": "#" }
     },
     "contact": {
       "phone": "(225) 555-0118",
-      "email": "michelle.rivera@example.com"
+      "email": "michelle.rivera@example.com",
+      "followUs": "Follow Us and get a chance to win 80% off"
     },
     "socialMedia": {
       "instagram": {
@@ -111,6 +79,111 @@
       "title": "Winter 2020",
       "subtitle": "Explore our winter collections and stay warm.",
       "imageUrl": "https://picsum.photos/1920/800?random=3"
+    }
+  ],
+  "shopCardSection": {
+    "title": "EDITOR'S PICK",
+    "subtitle": "Check out our latest collections"
+  },
+  "shopCards": [
+    {
+      "title": "MEN",
+      "imageUrl": "https://picsum.photos/200/200?random=1",
+      "href": "#"
+    },
+    {
+      "title": "WOMEN",
+      "imageUrl": "https://picsum.photos/200/200?random=2",
+      "href": "#"
+    },
+    {
+      "title": "ACCESSORIES",
+      "imageUrl": "https://picsum.photos/200/200?random=3",
+      "href": "#"
+    },
+    {
+      "title": "KIDS",
+      "imageUrl": "https://picsum.photos/200/200?random=63",
+      "href": "#"
+    }
+  ],
+  "productCard": {
+    "muted":"Featured Collection",
+    "title": "EDITOR'S PICK",
+    "subtitle": "Check out our latest collections"
+  },
+  "product":[
+    {
+      "id": 1,
+      "title": "Graphic Design",
+      "department": "English Department",
+      "price": 6.48,
+      "cutPrice":3.21,
+      "imageUrl": "https://picsum.photos/200/200?random=42",
+      "colors": ["lightblue", "lightblue", "lightblue", "lightblue"]
+    },
+    {
+      "id": 2,
+      "title": "Graphic Design",
+      "department": "English Department",
+      "price": 6.48,
+      "cutPrice":3.21,
+      "imageUrl": "https://picsum.photos/200/200?random=99",
+      "colors": ["lightblue", "lightblue", "lightblue", "lightblue"]
+    },
+    {
+      "id": 3,
+      "title": "Graphic Design",
+      "department": "English Department",
+      "price": 6.48,
+      "cutPrice":3.21,
+      "imageUrl": "https://picsum.photos/200/200?random=17",
+      "colors": ["lightblue", "lightblue", "lightblue", "lightblue"]
+    },
+    {
+      "id": 4,
+      "title": "Graphic Design",
+      "department": "English Department",
+      "price": 6.48,
+      "cutPrice":3.21,
+      "imageUrl": "https://picsum.photos/200/200?random=34",
+      "colors": ["lightblue", "lightblue", "lightblue", "lightblue"]
+    },
+    {
+      "id": 5,
+      "title": "Graphic Design",
+      "department": "English Department",
+      "price": 6.48,
+      "cutPrice":3.21,
+      "imageUrl": "https://picsum.photos/200/200?random=62",
+      "colors": ["lightblue", "lightblue", "lightblue", "lightblue"]
+    },
+    {
+      "id": 6,
+      "title": "Graphic Design",
+      "department": "English Department",
+      "price": 6.48,
+      "cutPrice":3.21,
+      "imageUrl": "https://picsum.photos/200/200?random=61",
+      "colors": ["lightblue", "lightblue", "lightblue", "lightblue"]
+    },
+    {
+      "id": 7,
+      "title": "Graphic Design",
+      "department": "English Department",
+      "price": 6.48,
+      "cutPrice":3.21,
+      "imageUrl": "https://picsum.photos/200/200?random=65",
+      "colors": ["lightblue", "lightblue", "lightblue", "lightblue"]
+    },
+    {
+      "id": 8,
+      "title": "Graphic Design",
+      "department": "English Department",
+      "price": 6.48,
+      "cutPrice":3.21,
+      "imageUrl": "https://picsum.photos/200/200?random=63",
+      "colors": ["lightblue", "lightblue", "lightblue", "lightblue"]
     }
   ]
 }
