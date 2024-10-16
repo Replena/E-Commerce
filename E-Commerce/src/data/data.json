@@ -306,5 +306,40 @@
         "link": "https://instagram.com"
       }
     ]
+  },
+  "shopPage":
+  {
+    "shopcard":[
+      {
+        "id": 1,
+        "image": "https://picsum.photos/200/200?random=283",
+        "title": "Ürün 1",
+        "items": 10
+      },
+      {
+        "id": 2,
+        "image": "https://picsum.photos/200/200?random=345",
+        "title": "Ürün 2",
+        "items": 20
+      },
+      {
+        "id": 3,
+        "image": "https://picsum.photos/200/200?random=213",
+        "title": "Ürün 3",
+        "items": 30
+      },
+      {
+        "id": 4,
+        "image": "https://picsum.photos/200/200?random=532",
+        "title": "Ürün 4",
+        "items": 40
+      },
+      {
+        "id": 5,
+        "image": "https://picsum.photos/200/200?random=367",
+        "title": "Ürün 5",
+        "items": 50
+      }
+    ]
   }
   }
