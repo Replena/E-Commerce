@@ -212,5 +212,13 @@
       "imageUrl": "https://picsum.photos/1920/800?random=73",
       "price":"$15.62",
       "button":"ADD TO CART"
-    }]
-}
+    }],
+  "fluidContainer":{
+    "imageUrl":"https://picsum.photos/200/200?random=325",
+    "season":"summer 1992",
+    "title":"Part of the Neural Universe",
+    "subtitle":"We know how large objects will act, but things on a small scale.",
+    "button1":"BUY NOW",
+    "button2":"READ MORE"
+  }
+  }

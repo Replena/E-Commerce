@@ -1,7 +1,7 @@
 import React from "react";
 import Product from "./Product";
 import data from "../data/data.json";
-const Products = ({ products }) => {
+const Products = () => {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
       {data.product.map((product) => (

@@ -1,4 +1,4 @@
-const TextSection = ({ season, title, subtitle, button, button2 }) => {
+const FluidContainerText = ({ season, title, subtitle, button, button2 }) => {
   return (
     <div className="w-1/2 flex flex-col justify-center p-8">
       <p className="uppercase text-gray-500 mb-2">{season}</p>
@@ -16,4 +16,4 @@ const TextSection = ({ season, title, subtitle, button, button2 }) => {
   );
 };
 
-export default TextSection;
+export default FluidContainerText;

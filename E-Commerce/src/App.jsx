@@ -6,6 +6,7 @@ import Footer from "./layout/Footer.jsx";
 import NavbarDark from "./components/NavbarDark.jsx";
 import ShopCardSection from "./components/ShopCardSection";
 import ProductCardSection from "./components/ProductCardSection";
+import FluidContainerSection from "./components/FluidContainerSection";
 import data from "./data/data.json";
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <ShopCardSection />
         <ProductCardSection />
         <CarouselHead carouselData={data.carousel2} />
+        <FluidContainerSection />
         <Routes>
           <Route path="/" element={<HomePage />} />
         </Routes>
