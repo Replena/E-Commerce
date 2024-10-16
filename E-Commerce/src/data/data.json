@@ -220,5 +220,91 @@
     "subtitle":"We know how large objects will act, but things on a small scale.",
     "button1":"BUY NOW",
     "button2":"READ MORE"
+  },
+  "blogCard": {
+    "muted":"Featured Collection",
+    "title": "EDITOR'S PICK",
+    "subtitle": "Check out our latest collections"
+  },
+  "blogSection":[
+    {
+      "cardInfo":"NEW",
+      "image": "https://picsum.photos/200/200?random=324",
+      "category1": "Google",
+      "category2": "Trending",
+      "category3": "New",
+      "title": "Loudest à la Madison #1",
+      "description": "We focus on ergonomics and meeting you where you work. It's only a keystroke away.",
+      "date": "22 April 2021",
+      "commentCount": "10",
+      "comments":"comment",
+      "more":"Learn More"
+    },
+    {
+      "cardInfo":"NEW",
+      "image": "https://picsum.photos/200/200?random=792",
+      "category1": "Google",
+      "category2": "Trending",
+      "category3": "New",
+      "title": "Loudest à la Madison #2",
+      "description": "We focus on ergonomics and meeting you where you work. It's only a keystroke away.",
+      "date": "22 April 2021",
+      "commentCount": "10",
+      "comments":"comment",
+      "more":"Learn More"
+    },
+    {
+      "cardInfo":"NEW",
+      "image": "https://picsum.photos/200/200?random=287",
+      "category1": "Google",
+      "category2": "Trending",
+      "category3": "New",
+      "title": "Loudest à la Madison #3",
+      "description": "We focus on ergonomics and meeting you where you work. It's only a keystroke away.",
+      "date": "22 April 2021",
+      "commentCount": "10",
+      "comments":"comment",
+      "more":"Learn More"
+    }
+  ],
+  "footer":{
+    "sections": [
+      {
+        "title": "Company Info",
+        "items": ["About Us", "Carrier", "We are hiring", "Blog"]
+      },
+      {
+        "title": "Legal",
+        "items": ["About Us", "Carrier", "We are hiring", "Blog"]
+      },
+      {
+        "title": "Features",
+        "items": ["Business Marketing", "User Analytic", "Live Chat", "Unlimited Support"]
+      },
+      {
+        "title": "Resources",
+        "items": ["IOS & Android", "Watch a Demo", "Customers", "API"]
+      }
+    ],
+    "getInTouch": {
+      "title": "Get In Touch",
+      "buttonText": "Subscribe",
+      "description": "Lorem ipsum dolor Amit"
+    },
+    "footerText": "Made With Love By Finland All Right Reserved",
+    "socialIcons": [
+      {
+        "iconClass": "fa-brands fa-facebook",
+        "link": "https://facebook.com"
+      },
+      {
+        "iconClass": "fa-brands fa-twitter",
+        "link": "https://twitter.com"
+      },
+      {
+        "iconClass": "fa-brands fa-instagram",
+        "link": "https://instagram.com"
+      }
+    ]
   }
   }

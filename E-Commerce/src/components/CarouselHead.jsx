@@ -1,5 +1,4 @@
 import ProductCard from "./CarouselProductCard";
-import data from "../data/data.json";
 import {
   Carousel,
   CarouselContent,
@@ -11,7 +10,6 @@ import {
 const CarouselHead = ({ carouselData }) => {
   return (
     <div className="relative">
-      {" "}
       <Carousel>
         <CarouselPrevious />
         <CarouselContent>

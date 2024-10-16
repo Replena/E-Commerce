@@ -7,8 +7,8 @@ const FluidContainerSection = () => {
     data.fluidContainer;
 
   return (
-    <div className="flex h-screen">
-      <FluidContainerImg imageUrl={imageUrl} />
+    <div className="flex flex-col md:flex-row h-screen">
+      <FluidContainerImg imageUrl={imageUrl} title={title} />
       <FluidContainerText
         season={season}
         title={title}

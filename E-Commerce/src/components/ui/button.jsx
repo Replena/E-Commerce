@@ -21,7 +21,9 @@ const buttonVariants = cva(
           "hover:bg-slate-100 hover:text-slate-900 dark:hover:bg-slate-800 dark:hover:text-slate-50",
         link: "text-slate-900 underline-offset-4 hover:underline dark:text-slate-50",
         success:
-          "text-slate-900 bg-green-500 hover:bg-green-500/90 dark:bg-green-900 dark:text-slate-50 dark:hover:bg-green-900/90",
+          "text-white bg-green-500 hover:bg-green-500/90 dark:bg-green-900 dark:text-slate-50 dark:hover:bg-green-900/90",
+        outlineSuccess:
+          "border border-green-500 bg-white text-green-500 hover:bg-green-500/10 dark:border-green-900 dark:bg-slate-950 dark:text-green-500 dark:hover:bg-green-900/10",
       },
       size: {
         default: "h-10 px-4 py-2",
