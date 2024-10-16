@@ -1,7 +1,14 @@
-import React from "react";
-
+import Footer from "../layout/Footer.jsx";
+import Header from "../layout/Header.jsx";
+import PageContent from "../layout/PageContent.jsx";
 function HomePage() {
-  return <div>HomePage</div>;
+  return (
+    <div>
+      <Header />
+      <PageContent />
+      <Footer />
+    </div>
+  );
 }
 
 export default HomePage;

@@ -13,6 +13,7 @@ export default {
         text: {
           default: "#252B42",
           secondary: "#737373",
+          light: "#FFFFFF",
         },
       },
     },

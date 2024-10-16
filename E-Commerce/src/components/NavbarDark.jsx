@@ -3,7 +3,7 @@ import data from "../data/data.json";
 import { EnvelopeIcon, PhoneIcon } from "@heroicons/react/24/outline";
 const NavbarDark = () => {
   return (
-    <nav className="bg-gray-800 text-white py-4 hidden lg:block">
+    <nav className="bg-text-default text-text-light py-4 hidden lg:block">
       <div className="mx-4 flex justify-between items-center">
         <div className="flex space-x-6">
           <p className="flex items-center">
@@ -26,7 +26,6 @@ const NavbarDark = () => {
                 href={data.navbar.socialMedia[key].href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white"
               >
                 <i
                   className={`${data.navbar.socialMedia[key].icon} text-xl`}
