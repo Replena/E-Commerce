@@ -18,7 +18,6 @@ import {
 } from "./ui/navigation-menu.jsx";
 
 const Navbar = () => {
-  const [dropdownOpen, setDropdownOpen] = useState(false);
   const links = data.navbar.links;
   const updatedLinks = [
     links[0],
@@ -91,7 +90,7 @@ const Navbar = () => {
           <div className="flex items-center space-x-4">
             <UserIcon className="h-6 w-6" />
             <div className="hidden lg:flex items-center space-x-4">
-              <div className="text-blue-500">
+              <div className="text-blue-500 flex">
                 <a href={data.navbar.auth.login.href}>
                   {data.navbar.auth.login.name}
                 </a>

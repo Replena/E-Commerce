@@ -66,19 +66,22 @@
       "season": "summer 2020",
       "title": "New Collection",
       "subtitle": "We know how large objects will act, but things on a small scale.",
-      "imageUrl": "https://picsum.photos/1920/800?random=1"
+      "imageUrl": "https://picsum.photos/1920/800?random=1",
+      "button":"SHOP"
     },
     {
       "season": "summer 2021",
       "title": "Summer 2020",
       "subtitle": "Check out our summer collections for your shopping experience.",
-      "imageUrl": "https://picsum.photos/1920/800?random=2"
+      "imageUrl": "https://picsum.photos/1920/800?random=2",
+      "button":"SHOP"
     },
     {
       "season": "winter 2024",
       "title": "Winter 2020",
       "subtitle": "Explore our winter collections and stay warm.",
-      "imageUrl": "https://picsum.photos/1920/800?random=3"
+      "imageUrl": "https://picsum.photos/1920/800?random=3",
+      "button":"SHOP"
     }
   ],
   "shopCardSection": {
@@ -185,5 +188,29 @@
       "imageUrl": "https://picsum.photos/200/200?random=63",
       "colors": ["lightblue", "lightblue", "lightblue", "lightblue"]
     }
-  ]
+  ], "carousel2": [
+    {
+      "season": "summer 1992",
+      "title": "New Collection",
+      "subtitle": "We know how large objects will act, but things on a small scale.",
+      "imageUrl": "https://picsum.photos/1920/800?random=76",
+      "price":"$15.62",
+      "button":"ADD TO CART"
+    },
+    {
+      "season": "summer 1998",
+      "title": "Summer 2020",
+      "subtitle": "Check out our summer collections for your shopping experience.",
+      "imageUrl": "https://picsum.photos/1920/800?random=74",
+      "price":"$15.62",
+      "button":"ADD TO CART"
+    },
+    {
+      "season": "winter 2024",
+      "title": "Winter 2020",
+      "subtitle": "Explore our winter collections and stay warm.",
+      "imageUrl": "https://picsum.photos/1920/800?random=73",
+      "price":"$15.62",
+      "button":"ADD TO CART"
+    }]
 }

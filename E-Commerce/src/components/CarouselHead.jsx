@@ -8,20 +8,22 @@ import {
   CarouselNext,
 } from "@/components/ui/carousel";
 
-const CarouselHead = () => {
+const CarouselHead = ({ carouselData }) => {
   return (
     <div className="relative">
       {" "}
       <Carousel>
         <CarouselPrevious />
         <CarouselContent>
-          {data.carousel.map((item, index) => (
+          {carouselData.map((item, index) => (
             <CarouselItem key={index}>
               <ProductCard
                 title={item.title}
                 subtitle={item.subtitle}
                 imageUrl={item.imageUrl}
                 season={item.season}
+                price={item.price}
+                button={item.button}
               />
             </CarouselItem>
           ))}

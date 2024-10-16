@@ -3,15 +3,11 @@ import React from "react";
 const Product = ({ product }) => {
   return (
     <div className="bg-white text-center">
-      {" "}
-      {/* Tüm div'i ortalamak için text-center ekliyoruz */}
       <img src={product.imageUrl} alt={product.title} className="w-full" />
       <div className="p-4">
         <h3 className="text-lg font-bold">{product.title}</h3>
         <p>{product.department}</p>
         <div className="flex justify-center items-center">
-          {" "}
-          {/* Fiyatları yan yana ve ortalanmış halde tutuyoruz */}
           <p className="text-2xl font-bold p-1 text-gray-400 line-through">
             ${product.price.toFixed(2)}
           </p>
@@ -20,8 +16,6 @@ const Product = ({ product }) => {
           </p>
         </div>
         <div className="flex justify-center items-center space-x-1">
-          {" "}
-          {/* Renkleri ortalamak için justify-center kullanıyoruz */}
           {product.colors.map((color, index) => (
             <div
               key={index}
@@ -34,5 +28,4 @@ const Product = ({ product }) => {
     </div>
   );
 };
-
 export default Product;
