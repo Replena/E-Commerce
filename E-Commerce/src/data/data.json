@@ -185,7 +185,160 @@
       "department": "English Department",
       "price": 6.48,
       "cutPrice":3.21,
+      "imageUrl": "https://picsum.photos/200/200?random=78",
+      "colors": ["lightblue", "lightblue", "lightblue", "lightblue"]
+    },
+    {
+      "id": 9,
+      "title": "Graphic Design",
+      "department": "English Department",
+      "price": 6.48,
+      "cutPrice":3.21,
       "imageUrl": "https://picsum.photos/200/200?random=63",
+      "colors": ["lightblue", "lightblue", "lightblue", "lightblue"]
+    },
+    {
+      "id": 10,
+      "title": "Graphic Design",
+      "department": "English Department",
+      "price": 6.48,
+      "cutPrice":3.21,
+      "imageUrl": "https://picsum.photos/200/200?random=6",
+      "colors": ["lightblue", "lightblue", "lightblue", "lightblue"]
+    },
+    {
+      "id": 11,
+      "title": "Graphic Design",
+      "department": "English Department",
+      "price": 6.48,
+      "cutPrice":3.21,
+      "imageUrl": "https://picsum.photos/200/200?random=91",
+      "colors": ["lightblue", "lightblue", "lightblue", "lightblue"]
+    },
+    {
+      "id":12,
+      "title": "Graphic Design",
+      "department": "English Department",
+      "price": 6.48,
+      "cutPrice":3.21,
+      "imageUrl": "https://picsum.photos/200/200?random=498",
+      "colors": ["lightblue", "lightblue", "lightblue", "lightblue"]
+    },
+    {
+      "id": 13,
+      "title": "Graphic Design",
+      "department": "English Department",
+      "price": 6.48,
+      "cutPrice":3.21,
+      "imageUrl": "https://picsum.photos/200/200?random=58",
+      "colors": ["lightblue", "lightblue", "lightblue", "lightblue"]
+    },
+    {
+      "id":14,
+      "title": "Graphic Design",
+      "department": "English Department",
+      "price": 6.48,
+      "cutPrice":3.21,
+      "imageUrl": "https://picsum.photos/200/200?random=53",
+      "colors": ["lightblue", "lightblue", "lightblue", "lightblue"]
+    },
+    {
+      "id": 15,
+      "title": "Graphic Design",
+      "department": "English Department",
+      "price": 6.48,
+      "cutPrice":3.21,
+      "imageUrl": "https://picsum.photos/200/200?random=159",
+      "colors": ["lightblue", "lightblue", "lightblue", "lightblue"]
+    },
+    {
+      "id": 16,
+      "title": "Graphic Design",
+      "department": "English Department",
+      "price": 6.48,
+      "cutPrice":3.21,
+      "imageUrl": "https://picsum.photos/200/200?random=128",
+      "colors": ["lightblue", "lightblue", "lightblue", "lightblue"]
+    },
+    {
+      "id": 17,
+      "title": "Graphic Design",
+      "department": "English Department",
+      "price": 6.48,
+      "cutPrice":3.21,
+      "imageUrl": "https://picsum.photos/200/200?random=130",
+      "colors": ["lightblue", "lightblue", "lightblue", "lightblue"]
+    },
+    {
+      "id": 18,
+      "title": "Graphic Design",
+      "department": "English Department",
+      "price": 6.48,
+      "cutPrice":3.21,
+      "imageUrl": "https://picsum.photos/200/200?random=120",
+      "colors": ["lightblue", "lightblue", "lightblue", "lightblue"]
+    },
+    {
+      "id": 19,
+      "title": "Graphic Design",
+      "department": "English Department",
+      "price": 6.48,
+      "cutPrice":3.21,
+      "imageUrl": "https://picsum.photos/200/200?random=180",
+      "colors": ["lightblue", "lightblue", "lightblue", "lightblue"]
+    },
+    {
+      "id": 20,
+      "title": "Graphic Design",
+      "department": "English Department",
+      "price": 6.48,
+      "cutPrice":3.21,
+      "imageUrl": "https://picsum.photos/200/200?random=190",
+      "colors": ["lightblue", "lightblue", "lightblue", "lightblue"]
+    },
+    {
+      "id": 21,
+      "title": "Graphic Design",
+      "department": "English Department",
+      "price": 6.48,
+      "cutPrice":3.21,
+      "imageUrl": "https://picsum.photos/200/200?random=109",
+      "colors": ["lightblue", "lightblue", "lightblue", "lightblue"]
+    },
+    {
+      "id": 22,
+      "title": "Graphic Design",
+      "department": "English Department",
+      "price": 6.48,
+      "cutPrice":3.21,
+      "imageUrl": "https://picsum.photos/200/200?random=330",
+      "colors": ["lightblue", "lightblue", "lightblue", "lightblue"]
+    },
+    {
+      "id": 23,
+      "title": "Graphic Design",
+      "department": "English Department",
+      "price": 6.48,
+      "cutPrice":3.21,
+      "imageUrl": "https://picsum.photos/200/200?random=390",
+      "colors": ["lightblue", "lightblue", "lightblue", "lightblue"]
+    },
+    {
+      "id": 24,
+      "title": "Graphic Design",
+      "department": "English Department",
+      "price": 6.48,
+      "cutPrice":3.21,
+      "imageUrl": "https://picsum.photos/200/200?random=300",
+      "colors": ["lightblue", "lightblue", "lightblue", "lightblue"]
+    },
+    {
+      "id": 25,
+      "title": "Graphic Design",
+      "department": "English Department",
+      "price": 6.48,
+      "cutPrice":3.21,
+      "imageUrl": "https://picsum.photos/200/200?random=400",
       "colors": ["lightblue", "lightblue", "lightblue", "lightblue"]
     }
   ], "carousel2": [
@@ -309,7 +462,11 @@
   },
   "shopPage":
   {
-    "shopcard":[
+    "shopCard": {
+    "title": "EDITOR'S PICK",
+    "where": "Home > Page"
+  },
+    "shop":[
       {
         "id": 1,
         "image": "https://picsum.photos/200/200?random=283",
@@ -339,6 +496,32 @@
         "image": "https://picsum.photos/200/200?random=367",
         "title": "Ürün 5",
         "items": 50
+      }
+    ],
+    "clients":[
+      {
+        "name": "Hoooli",
+        "image": "../../public/Vector.svg"
+      },
+      {
+        "name": "Lyft",
+        "image": "../../Vector2.svg"
+      },
+      {
+        "name": "Feather",
+        "image": "../../Vector3.svg"
+      },
+      {
+        "name": "Stripe",
+        "image": "../../Vector4.svg"
+      },
+      {
+        "name": "AWS",
+        "image": "../../Vector5.svg"
+      },
+      {
+        "name": "Reddit",
+        "image": "../../Vector6.svg"
       }
     ]
   }

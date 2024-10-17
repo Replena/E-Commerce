@@ -8,7 +8,7 @@ function ShopCardSection() {
         <h2 className=" font-bold ">{data.shopCardSection.title}</h2>
         <p className=" font-bold">{data.shopCardSection.subtitle}</p>
       </div>
-      <div className="px-8 lg:pl-60 lg:pr-60 lg:pb-60">
+      <div className="">
         <Masonry />
       </div>
     </div>

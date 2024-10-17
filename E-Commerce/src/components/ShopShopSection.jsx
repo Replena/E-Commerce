@@ -1,11 +1,13 @@
 import React from "react";
 import ShopShopCards from "./ShopShopCards";
-
-const ShopShopSection = ({ title, data }) => {
+const ShopShopSection = ({ data }) => {
   return (
     <div className="py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="px-8 lg:pl-60 lg:pr-60 lg:pb-16 ">{title}</h2>
+      <div className="mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="lg:flex justify-between lg:px-64 lg:pb-5 ">
+          <h2 className="">{data.shopCard.title}</h2>
+          <p>{data.shopCard.where}</p>
+        </div>
         <ShopShopCards data={data} />
       </div>
     </div>

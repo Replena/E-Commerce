@@ -4,7 +4,7 @@ import ShopCards from "./ShopCard";
 
 const Masonry = () => {
   return (
-    <div className="grid grid-cols-1 grid-rows-6 md:grid-cols-4 md:grid-rows-2 gap-11">
+    <div className="grid grid-cols-1 grid-rows-6 md:grid-cols-4 md:grid-rows-2 gap-11 px-8 lg:pl-60 lg:pr-60 lg:pb-60">
       <div className="col-span-1 row-span-2 md:col-span-2 md:row-span-2 bg-blue-500">
         {data.shopCards[0] && (
           <ShopCards

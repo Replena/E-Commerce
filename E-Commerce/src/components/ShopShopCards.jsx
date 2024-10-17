@@ -3,8 +3,8 @@ import ShopShopCard from "./ShopShopCard";
 
 const ShopShopCards = ({ data }) => {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
-      {data.map((product) => (
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 px-8 lg:pl-60 lg:pr-60 lg:pb-60">
+      {data.shop.map((product) => (
         <ShopShopCard
           key={product.id}
           image={product.image}
