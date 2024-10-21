@@ -11,6 +11,7 @@ export default {
         success: "#2DC071",
         lightblue: "#8EC2F2",
         red: "#E74040",
+        lightGray: "#E6E6E6",
         text: {
           default: "#252B42",
           secondary: "#737373",

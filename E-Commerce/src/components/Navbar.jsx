@@ -126,7 +126,7 @@ const Navbar = () => {
             <a
               key={index}
               href={link.href}
-              className="text-gray-600 hover:text-blue-500"
+              className="text-text-secondary hover:text-primary"
             >
               {link.name}
             </a>

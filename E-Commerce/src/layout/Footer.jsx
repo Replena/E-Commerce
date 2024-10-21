@@ -3,7 +3,7 @@ import data from "../data/data.json";
 const Footer = () => {
   return (
     <footer className="">
-      <div className="bg-gray-500">
+      <div className="bg-lightGray">
         <div className="container mx-auto mb-10 flex flex-col md:flex-row justify-between p-8">
           <h3 className="text-4xl font-semibold mb-4">{data.navbar.title}</h3>
           <div className="flex space-x-4 mt-4">
@@ -13,7 +13,7 @@ const Footer = () => {
                 href={icon.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-500 hover:text-blue-800"
+                className="text-primary hover:text-secondary"
               >
                 <i className={icon.iconClass}></i>
               </a>
@@ -29,7 +29,10 @@ const Footer = () => {
               <ul className="space-y-2">
                 {section.items.map((item, itemIndex) => (
                   <li key={itemIndex}>
-                    <a href="#" className="text-gray-600 hover:text-gray-900">
+                    <a
+                      href="#"
+                      className="text-text-secondary hover:text-text-default"
+                    >
                       {item}
                     </a>
                   </li>
@@ -46,22 +49,22 @@ const Footer = () => {
                 <input
                   type="email"
                   placeholder="Your Email"
-                  className="w-full p-2 border border-gray-300 rounded-l-md focus:outline-none"
+                  className="w-full p-2 border rounded-l-md focus:outline-none"
                 />
-                <button className="bg-blue-500 text-white px-4 py-2 rounded-r-md hover:bg-blue-600">
+                <button className="bg-primary text-text-light px-4 py-2 rounded-r-md">
                   {data.footer.getInTouch.buttonText}
                 </button>
               </div>
             </form>
-            <p className="text-gray-600">
+            <p className="text-text-secondary">
               {data.footer.getInTouch.description}
             </p>
           </div>
         </div>
       </div>
-      <div className="bg-gray-200">
+      <div className="bg-lightGray">
         <div className="mt-10 pt-6 container  px-28  mx-auto py-8 md:flex text-center  md:px-8">
-          <p className="text-gray-500">{data.footer.footerText}</p>
+          <p className="text-text-secondary">{data.footer.footerText}</p>
         </div>
       </div>
     </footer>

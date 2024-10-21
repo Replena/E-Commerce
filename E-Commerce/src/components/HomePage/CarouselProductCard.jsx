@@ -9,7 +9,7 @@ const ProductCard = ({ title, subtitle, imageUrl, season, price, button }) => {
         <h2 className="text-5xl font-bold my-8">{title}</h2>
         <p className="text-2xl mx-8 md:mx-0 ">{subtitle}</p>
         <div className="mx-auto md:mx-0 my-8 lg:flex">
-          {price && <p className="text-2xl font-bold mb-5">{price}</p>}
+          {price && <p className="text-2xl font-bold mr-5 ">{price}</p>}
 
           <Button variant="success" size="lg">
             {button}

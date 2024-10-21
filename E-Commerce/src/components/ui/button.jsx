@@ -20,15 +20,14 @@ const buttonVariants = cva(
         ghostPrimary: "lg:text-primary lg:hover:text-secondary",
         ghostSecondary: "text-secondary hover:text-primary",
         link: "text-slate-900 underline-offset-4 hover:underline dark:text-slate-50",
-        success:
-          "text-white bg-green-500 hover:bg-green-500/90 dark:bg-green-900 dark:text-slate-50 dark:hover:bg-green-900/90",
+        success: "text-text-light bg-success ",
         outlineSuccess:
           "border border-green-500 bg-white text-green-500 hover:bg-green-500/10 dark:border-green-900 dark:bg-slate-950 dark:text-green-500 dark:hover:bg-green-900/10",
       },
       size: {
         default: "h-10 px-4 py-2",
         sm: "h-9 rounded-md px-3",
-        lg: "h-11 rounded-md px-8",
+        lg: "h-11 rounded-sm px-9 font-bold text-lg",
         icon: "h-10 w-10",
         wopadding: "p-0",
       },
