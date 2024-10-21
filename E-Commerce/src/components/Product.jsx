@@ -15,17 +15,20 @@ const Product = ({ product }) => {
             ${product.cutPrice.toFixed(2)}
           </p>
         </div>
-        <div className="flex justify-center items-center space-x-1">
-          {product.colors.map((color, index) => (
-            <div
-              key={index}
-              className="w-3 h-3 rounded-full"
-              style={{ backgroundColor: color }}
-            ></div>
-          ))}
-        </div>
+        {product.showColors && product.colors && product.colors.length > 0 && (
+          <div className="flex justify-center items-center space-x-1 mt-2">
+            {product.colors.map((color, index) => (
+              <div
+                key={index}
+                className="w-3 h-3 rounded-full"
+                style={{ backgroundColor: color }}
+              ></div>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
 };
+
 export default Product;

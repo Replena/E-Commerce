@@ -524,5 +524,113 @@
         "image": "../../Vector6.svg"
       }
     ]
-  }
-  }
+  },
+  
+    "productPage": {
+      "carousel3": [
+        {
+          "imageUrl": "https://picsum.photos/1920/800?random=1",
+          "productName": "Product 1",
+          "review": "510 Reviews",
+          "productPrice":"1,113.33",
+          "availability":"Availability",
+          "availabilityStatus":" In Stock",
+          "description": "This is a stunning product that stands out in any environment. It is designed for both comfort and style.",
+          "colors": ["#FF5733", "#C70039", "#900C3F"],
+          "buttons": [
+            {"label": "Select Option", "action": "buy"},
+            {"label": "", "action": "like"},
+            {"label": "", "action": "shop"},
+            {"label": "", "action": "inspect"}
+          ]
+        },
+        {
+          "imageUrl": "https://picsum.photos/1920/800?random=2",
+          "productName": "Product 2",
+          "review": "410 Reviews",
+          "productPrice":"1,113.33",
+          "availability":"Availability",
+          "availabilityStatus":" In Stock",
+          "description": "A must-have for modern design enthusiasts, blending functionality with sleek aesthetics.",
+          "colors": ["#581845", "#DAF7A6", "#FFC300"],
+          "buttons": [
+            {"label": "Select Option", "action": "buy"},
+            {"label": "", "action": "like"},
+            {"label": "", "action": "shop"},
+            {"label": "", "action": "inspect"}
+          ]
+        },
+        {
+          "imageUrl": "https://picsum.photos/1920/800?random=3",
+          "productName": "Product 3",
+          "review": "10 Reviews",
+          "productPrice":"1,113.33",
+          "availability":"Availability",
+          "availabilityStatus":" In Stock",
+          "description": "Perfect for daily use, this product is both durable and eco-friendly, crafted with the environment in mind.",
+          "colors": ["#1F618D", "#2980B9", "#AAB7B8"],
+          "buttons": [
+            {"label": "Select Option", "action": "buy"},
+            {"label": "", "action": "like"},
+            {"label": "", "action": "shop"},
+            {"label": "", "action": "inspect"}
+          ]
+        }
+      ],
+      "bestSellerTitle": "Best Sellers",
+      "product":
+      
+      [
+        {
+          "id": 1,
+          "title": "Graphic Design",
+          "department": "English Department",
+          "price": 6.48,
+          "cutPrice":3.21,
+          "imageUrl": "https://picsum.photos/200/200?random=42"
+        },
+        {
+          "id": 2,
+          "title": "Graphic Design",
+          "department": "English Department",
+          "price": 6.48,
+          "cutPrice":3.21,
+          "imageUrl": "https://picsum.photos/200/200?random=99"
+        },
+        {
+          "id": 3,
+          "title": "Graphic Design",
+          "department": "English Department",
+          "price": 6.48,
+          "cutPrice":3.21,
+          "imageUrl": "https://picsum.photos/200/200?random=17"
+        },
+        {
+          "id": 4,
+          "title": "Graphic Design",
+          "department": "English Department",
+          "price": 6.48,
+          "cutPrice":3.21,
+          "imageUrl": "https://picsum.photos/200/200?random=34"
+        },
+        {
+          "id": 5,
+          "title": "Graphic Design",
+          "department": "English Department",
+          "price": 6.48,
+          "cutPrice":3.21,
+          "imageUrl": "https://picsum.photos/200/200?random=62"
+        },
+        {
+          "id": 6,
+          "title": "Graphic Design",
+          "department": "English Department",
+          "price": 6.48,
+          "cutPrice":3.21,
+          "imageUrl": "https://picsum.photos/200/200?random=61"
+        }
+    ]
+  }}
+  
+  
+

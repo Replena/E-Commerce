@@ -11,7 +11,11 @@ function ProductCardSection() {
         <p>{data.productCard.subtitle}</p>
       </div>
       <div className="">
-        <Products itemsPerPage={itemsPerPage} currentPage={currentPage} />
+        <Products
+          itemsPerPage={itemsPerPage}
+          currentPage={currentPage}
+          showColors={true}
+        />
       </div>
     </div>
   );

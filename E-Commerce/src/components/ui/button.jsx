@@ -10,19 +10,24 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-slate-900 text-slate-50 hover:bg-slate-900/90 dark:bg-slate-50 dark:text-slate-900 dark:hover:bg-slate-50/90",
+          "bg-primary text-text-light hover:bg-secondary dark:bg-text-light dark:text-text-default dark:hover:bg-secondary",
         destructive:
-          "bg-red-500 text-slate-50 hover:bg-red-500/90 dark:bg-red-900 dark:text-slate-50 dark:hover:bg-red-900/90",
+          "bg-red text-text-light hover:bg-red/90 dark:bg-red-900 dark:text-text-light dark:hover:bg-red-900/90",
         outline:
-          "border border-slate-200 bg-white hover:bg-slate-100 hover:text-slate-900 dark:border-slate-800 dark:bg-slate-950 dark:hover:bg-slate-800 dark:hover:text-slate-50",
+          "border border-muted bg-lightGray hover:bg-lightGray hover:text-text-default dark:border-slate-800 dark:bg-slate-950 dark:hover:bg-slate-800 dark:hover:text-text-light",
         secondary:
-          "bg-slate-100 text-slate-900 hover:bg-slate-100/80 dark:bg-slate-800 dark:text-slate-50 dark:hover:bg-slate-800/80",
-        ghostPrimary: "lg:text-primary lg:hover:text-secondary",
-        ghostSecondary: "text-secondary hover:text-primary",
-        link: "text-slate-900 underline-offset-4 hover:underline dark:text-slate-50",
-        success: "text-text-light bg-success ",
+          "bg-secondary text-text-light hover:bg-secondary/80 dark:bg-secondary dark:text-text-light dark:hover:bg-secondary/80",
+        ghostPrimary:
+          "text-primary hover:text-secondary dark:text-primary dark:hover:text-secondary",
+        ghostSecondary:
+          "text-secondary hover:text-primary dark:text-secondary dark:hover:text-primary",
+        link: "text-text-default underline-offset-4 hover:underline dark:text-text-light",
+        success:
+          "bg-success text-text-light hover:bg-success/90 dark:bg-success dark:text-text-light",
         outlineSuccess:
-          "border border-green-500 bg-white text-green-500 hover:bg-green-500/10 dark:border-green-900 dark:bg-slate-950 dark:text-green-500 dark:hover:bg-green-900/10",
+          "border border-success bg-lightGray text-success hover:bg-success/10 dark:border-success dark:bg-slate-950 dark:text-success dark:hover:bg-success/10",
+        iconButton:
+          "p-2 rounded-full text-text-default border border-lightGray bg-text-light hover:bg-primary hover:text-text-light dark:text-primary dark:hover:text-secondary",
       },
       size: {
         default: "h-10 px-4 py-2",

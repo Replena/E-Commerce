@@ -1,8 +1,8 @@
 import React from "react";
-import Product from "./HomePage/Product.jsx";
+import Product from "./Product.jsx";
 import data from "../data/data.json";
 
-const Products = ({ itemsPerPage, currentPage }) => {
+const Products = ({ itemsPerPage, currentPage, showColors = false }) => {
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
 
@@ -11,7 +11,7 @@ const Products = ({ itemsPerPage, currentPage }) => {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
       {visibleProducts.map((product) => (
-        <Product key={product.id} product={product} />
+        <Product key={product.id} product={{ ...product, showColors }} />
       ))}
     </div>
   );

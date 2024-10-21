@@ -28,7 +28,7 @@ const Navbar = () => {
 
   return (
     <nav className="bg-text-light">
-      <div className="flex flex-col justify-between p-4">
+      <div className="flex flex-col justify-between p-4 container">
         <div className="flex justify-between items-center w-full">
           <div className="flex gap-28 ">
             <div className="text-xl font-bold">{data.navbar.title}</div>

@@ -12,10 +12,12 @@ export default {
         lightblue: "#8EC2F2",
         red: "#E74040",
         lightGray: "#E6E6E6",
+        yellow: "#F3CD03",
         text: {
           default: "#252B42",
           secondary: "#737373",
           light: "#FFFFFF",
+          lightSecondary: "#858585",
         },
       },
       container: {
