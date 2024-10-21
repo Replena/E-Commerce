@@ -1,0 +1,528 @@
+{
+  "navbar": {
+    "title": "Bandage",
+    "links": [
+      { "name": "Home", "href": "#" },
+      { "name": "About", "href": "#" },
+      { "name": "Blog", "href": "#" },
+      { "name": "Contact", "href": "#" },
+      { "name": "Pages", "href": "#" }
+    ],
+    "mobileLinks": [
+      { "name": "Home", "href": "#" },
+      { "name": "Product", "href": "#" },
+      { "name": "Pricing", "href": "#" },
+      { "name": "Contact", "href": "#" }
+    ],
+    "dropdown": {
+      "shop": {
+        "name": "Shop",
+        "items": {
+          "kadın": [
+            { "name": "Bags", "href": "#" },
+            { "name": "Belts", "href": "#" },
+            { "name": "Cosmetics", "href": "#" },
+            { "name": "Hats", "href": "#" }
+          ],
+          "erkek": [
+            { "name": "Bags", "href": "#" },
+            { "name": "Belts", "href": "#" },
+            { "name": "Cosmetics", "href": "#" },
+            { "name": "Hats", "href": "#" }
+          ]
+        }
+      }
+    },
+    "auth": {
+      "login": { "name": "Login", "href": "#" },
+      "register": { "name": "Register", "href": "#" }
+    },
+    "contact": {
+      "phone": "(225) 555-0118",
+      "email": "michelle.rivera@example.com",
+      "followUs": "Follow Us and get a chance to win 80% off"
+    },
+    "socialMedia": {
+      "instagram": {
+        "href": "#",
+        "icon": "fa-brands fa-instagram"
+      },
+      "youtube": {
+        "href": "#",
+        "icon": "fa-brands fa-youtube"
+      },
+      "facebook": {
+        "href": "#",
+        "icon": "fa-brands fa-facebook"
+      },
+      "twitter": {
+        "href": "#",
+        "icon": "fa-brands fa-twitter"
+      }
+    }
+  },
+  "carousel": [
+    {
+      "season": "summer 2020",
+      "title": "New Collection",
+      "subtitle": "We know how large objects will act, but things on a small scale.",
+      "imageUrl": "https://picsum.photos/1920/800?random=1",
+      "button":"SHOP"
+    },
+    {
+      "season": "summer 2021",
+      "title": "Summer 2020",
+      "subtitle": "Check out our summer collections for your shopping experience.",
+      "imageUrl": "https://picsum.photos/1920/800?random=2",
+      "button":"SHOP"
+    },
+    {
+      "season": "winter 2024",
+      "title": "Winter 2020",
+      "subtitle": "Explore our winter collections and stay warm.",
+      "imageUrl": "https://picsum.photos/1920/800?random=3",
+      "button":"SHOP"
+    }
+  ],
+  "shopCardSection": {
+    "title": "EDITOR'S PICK",
+    "subtitle": "Check out our latest collections"
+  },
+  "shopCards": [
+    {
+      "title": "MEN",
+      "imageUrl": "https://picsum.photos/200/200?random=1",
+      "href": "#"
+    },
+    {
+      "title": "WOMEN",
+      "imageUrl": "https://picsum.photos/200/200?random=2",
+      "href": "#"
+    },
+    {
+      "title": "ACCESSORIES",
+      "imageUrl": "https://picsum.photos/200/200?random=3",
+      "href": "#"
+    },
+    {
+      "title": "KIDS",
+      "imageUrl": "https://picsum.photos/200/200?random=63",
+      "href": "#"
+    }
+  ],
+  "productCard": {
+    "muted":"Featured Collection",
+    "title": "EDITOR'S PICK",
+    "subtitle": "Check out our latest collections"
+  },
+  "product":[
+    {
+      "id": 1,
+      "title": "Graphic Design",
+      "department": "English Department",
+      "price": 6.48,
+      "cutPrice":3.21,
+      "imageUrl": "https://picsum.photos/200/200?random=42",
+      "colors": ["lightblue", "lightblue", "lightblue", "lightblue"]
+    },
+    {
+      "id": 2,
+      "title": "Graphic Design",
+      "department": "English Department",
+      "price": 6.48,
+      "cutPrice":3.21,
+      "imageUrl": "https://picsum.photos/200/200?random=99",
+      "colors": ["lightblue", "lightblue", "lightblue", "lightblue"]
+    },
+    {
+      "id": 3,
+      "title": "Graphic Design",
+      "department": "English Department",
+      "price": 6.48,
+      "cutPrice":3.21,
+      "imageUrl": "https://picsum.photos/200/200?random=17",
+      "colors": ["lightblue", "lightblue", "lightblue", "lightblue"]
+    },
+    {
+      "id": 4,
+      "title": "Graphic Design",
+      "department": "English Department",
+      "price": 6.48,
+      "cutPrice":3.21,
+      "imageUrl": "https://picsum.photos/200/200?random=34",
+      "colors": ["lightblue", "lightblue", "lightblue", "lightblue"]
+    },
+    {
+      "id": 5,
+      "title": "Graphic Design",
+      "department": "English Department",
+      "price": 6.48,
+      "cutPrice":3.21,
+      "imageUrl": "https://picsum.photos/200/200?random=62",
+      "colors": ["lightblue", "lightblue", "lightblue", "lightblue"]
+    },
+    {
+      "id": 6,
+      "title": "Graphic Design",
+      "department": "English Department",
+      "price": 6.48,
+      "cutPrice":3.21,
+      "imageUrl": "https://picsum.photos/200/200?random=61",
+      "colors": ["lightblue", "lightblue", "lightblue", "lightblue"]
+    },
+    {
+      "id": 7,
+      "title": "Graphic Design",
+      "department": "English Department",
+      "price": 6.48,
+      "cutPrice":3.21,
+      "imageUrl": "https://picsum.photos/200/200?random=65",
+      "colors": ["lightblue", "lightblue", "lightblue", "lightblue"]
+    },
+    {
+      "id": 8,
+      "title": "Graphic Design",
+      "department": "English Department",
+      "price": 6.48,
+      "cutPrice":3.21,
+      "imageUrl": "https://picsum.photos/200/200?random=78",
+      "colors": ["lightblue", "lightblue", "lightblue", "lightblue"]
+    },
+    {
+      "id": 9,
+      "title": "Graphic Design",
+      "department": "English Department",
+      "price": 6.48,
+      "cutPrice":3.21,
+      "imageUrl": "https://picsum.photos/200/200?random=63",
+      "colors": ["lightblue", "lightblue", "lightblue", "lightblue"]
+    },
+    {
+      "id": 10,
+      "title": "Graphic Design",
+      "department": "English Department",
+      "price": 6.48,
+      "cutPrice":3.21,
+      "imageUrl": "https://picsum.photos/200/200?random=6",
+      "colors": ["lightblue", "lightblue", "lightblue", "lightblue"]
+    },
+    {
+      "id": 11,
+      "title": "Graphic Design",
+      "department": "English Department",
+      "price": 6.48,
+      "cutPrice":3.21,
+      "imageUrl": "https://picsum.photos/200/200?random=91",
+      "colors": ["lightblue", "lightblue", "lightblue", "lightblue"]
+    },
+    {
+      "id":12,
+      "title": "Graphic Design",
+      "department": "English Department",
+      "price": 6.48,
+      "cutPrice":3.21,
+      "imageUrl": "https://picsum.photos/200/200?random=498",
+      "colors": ["lightblue", "lightblue", "lightblue", "lightblue"]
+    },
+    {
+      "id": 13,
+      "title": "Graphic Design",
+      "department": "English Department",
+      "price": 6.48,
+      "cutPrice":3.21,
+      "imageUrl": "https://picsum.photos/200/200?random=58",
+      "colors": ["lightblue", "lightblue", "lightblue", "lightblue"]
+    },
+    {
+      "id":14,
+      "title": "Graphic Design",
+      "department": "English Department",
+      "price": 6.48,
+      "cutPrice":3.21,
+      "imageUrl": "https://picsum.photos/200/200?random=53",
+      "colors": ["lightblue", "lightblue", "lightblue", "lightblue"]
+    },
+    {
+      "id": 15,
+      "title": "Graphic Design",
+      "department": "English Department",
+      "price": 6.48,
+      "cutPrice":3.21,
+      "imageUrl": "https://picsum.photos/200/200?random=159",
+      "colors": ["lightblue", "lightblue", "lightblue", "lightblue"]
+    },
+    {
+      "id": 16,
+      "title": "Graphic Design",
+      "department": "English Department",
+      "price": 6.48,
+      "cutPrice":3.21,
+      "imageUrl": "https://picsum.photos/200/200?random=128",
+      "colors": ["lightblue", "lightblue", "lightblue", "lightblue"]
+    },
+    {
+      "id": 17,
+      "title": "Graphic Design",
+      "department": "English Department",
+      "price": 6.48,
+      "cutPrice":3.21,
+      "imageUrl": "https://picsum.photos/200/200?random=130",
+      "colors": ["lightblue", "lightblue", "lightblue", "lightblue"]
+    },
+    {
+      "id": 18,
+      "title": "Graphic Design",
+      "department": "English Department",
+      "price": 6.48,
+      "cutPrice":3.21,
+      "imageUrl": "https://picsum.photos/200/200?random=120",
+      "colors": ["lightblue", "lightblue", "lightblue", "lightblue"]
+    },
+    {
+      "id": 19,
+      "title": "Graphic Design",
+      "department": "English Department",
+      "price": 6.48,
+      "cutPrice":3.21,
+      "imageUrl": "https://picsum.photos/200/200?random=180",
+      "colors": ["lightblue", "lightblue", "lightblue", "lightblue"]
+    },
+    {
+      "id": 20,
+      "title": "Graphic Design",
+      "department": "English Department",
+      "price": 6.48,
+      "cutPrice":3.21,
+      "imageUrl": "https://picsum.photos/200/200?random=190",
+      "colors": ["lightblue", "lightblue", "lightblue", "lightblue"]
+    },
+    {
+      "id": 21,
+      "title": "Graphic Design",
+      "department": "English Department",
+      "price": 6.48,
+      "cutPrice":3.21,
+      "imageUrl": "https://picsum.photos/200/200?random=109",
+      "colors": ["lightblue", "lightblue", "lightblue", "lightblue"]
+    },
+    {
+      "id": 22,
+      "title": "Graphic Design",
+      "department": "English Department",
+      "price": 6.48,
+      "cutPrice":3.21,
+      "imageUrl": "https://picsum.photos/200/200?random=330",
+      "colors": ["lightblue", "lightblue", "lightblue", "lightblue"]
+    },
+    {
+      "id": 23,
+      "title": "Graphic Design",
+      "department": "English Department",
+      "price": 6.48,
+      "cutPrice":3.21,
+      "imageUrl": "https://picsum.photos/200/200?random=390",
+      "colors": ["lightblue", "lightblue", "lightblue", "lightblue"]
+    },
+    {
+      "id": 24,
+      "title": "Graphic Design",
+      "department": "English Department",
+      "price": 6.48,
+      "cutPrice":3.21,
+      "imageUrl": "https://picsum.photos/200/200?random=300",
+      "colors": ["lightblue", "lightblue", "lightblue", "lightblue"]
+    },
+    {
+      "id": 25,
+      "title": "Graphic Design",
+      "department": "English Department",
+      "price": 6.48,
+      "cutPrice":3.21,
+      "imageUrl": "https://picsum.photos/200/200?random=400",
+      "colors": ["lightblue", "lightblue", "lightblue", "lightblue"]
+    }
+  ], "carousel2": [
+    {
+      "season": "summer 1992",
+      "title": "New Collection",
+      "subtitle": "We know how large objects will act, but things on a small scale.",
+      "imageUrl": "https://picsum.photos/1920/800?random=76",
+      "price":"$15.62",
+      "button":"ADD TO CART"
+    },
+    {
+      "season": "summer 1998",
+      "title": "Summer 2020",
+      "subtitle": "Check out our summer collections for your shopping experience.",
+      "imageUrl": "https://picsum.photos/1920/800?random=74",
+      "price":"$15.62",
+      "button":"ADD TO CART"
+    },
+    {
+      "season": "winter 2024",
+      "title": "Winter 2020",
+      "subtitle": "Explore our winter collections and stay warm.",
+      "imageUrl": "https://picsum.photos/1920/800?random=73",
+      "price":"$15.62",
+      "button":"ADD TO CART"
+    }],
+  "fluidContainer":{
+    "imageUrl":"https://picsum.photos/200/200?random=325",
+    "season":"summer 1992",
+    "title":"Part of the Neural Universe",
+    "subtitle":"We know how large objects will act, but things on a small scale.",
+    "button1":"BUY NOW",
+    "button2":"READ MORE"
+  },
+  "blogCard": {
+    "muted":"Featured Collection",
+    "title": "EDITOR'S PICK",
+    "subtitle": "Check out our latest collections"
+  },
+  "blogSection":[
+    {
+      "cardInfo":"NEW",
+      "image": "https://picsum.photos/200/200?random=324",
+      "category1": "Google",
+      "category2": "Trending",
+      "category3": "New",
+      "title": "Loudest à la Madison #1",
+      "description": "We focus on ergonomics and meeting you where you work. It's only a keystroke away.",
+      "date": "22 April 2021",
+      "commentCount": "10",
+      "comments":"comment",
+      "more":"Learn More"
+    },
+    {
+      "cardInfo":"NEW",
+      "image": "https://picsum.photos/200/200?random=792",
+      "category1": "Google",
+      "category2": "Trending",
+      "category3": "New",
+      "title": "Loudest à la Madison #2",
+      "description": "We focus on ergonomics and meeting you where you work. It's only a keystroke away.",
+      "date": "22 April 2021",
+      "commentCount": "10",
+      "comments":"comment",
+      "more":"Learn More"
+    },
+    {
+      "cardInfo":"NEW",
+      "image": "https://picsum.photos/200/200?random=287",
+      "category1": "Google",
+      "category2": "Trending",
+      "category3": "New",
+      "title": "Loudest à la Madison #3",
+      "description": "We focus on ergonomics and meeting you where you work. It's only a keystroke away.",
+      "date": "22 April 2021",
+      "commentCount": "10",
+      "comments":"comment",
+      "more":"Learn More"
+    }
+  ],
+  "footer":{
+    "sections": [
+      {
+        "title": "Company Info",
+        "items": ["About Us", "Carrier", "We are hiring", "Blog"]
+      },
+      {
+        "title": "Legal",
+        "items": ["About Us", "Carrier", "We are hiring", "Blog"]
+      },
+      {
+        "title": "Features",
+        "items": ["Business Marketing", "User Analytic", "Live Chat", "Unlimited Support"]
+      },
+      {
+        "title": "Resources",
+        "items": ["IOS & Android", "Watch a Demo", "Customers", "API"]
+      }
+    ],
+    "getInTouch": {
+      "title": "Get In Touch",
+      "buttonText": "Subscribe",
+      "description": "Lorem ipsum dolor Amit"
+    },
+    "footerText": "Made With Love By Finland All Right Reserved",
+    "socialIcons": [
+      {
+        "iconClass": "fa-brands fa-facebook",
+        "link": "https://facebook.com"
+      },
+      {
+        "iconClass": "fa-brands fa-twitter",
+        "link": "https://twitter.com"
+      },
+      {
+        "iconClass": "fa-brands fa-instagram",
+        "link": "https://instagram.com"
+      }
+    ]
+  },
+  "shopPage":
+  {
+    "shopCard": {
+    "title": "EDITOR'S PICK",
+    "where": "Home > Page"
+  },
+    "shop":[
+      {
+        "id": 1,
+        "image": "https://picsum.photos/200/200?random=283",
+        "title": "Ürün 1",
+        "items": 10
+      },
+      {
+        "id": 2,
+        "image": "https://picsum.photos/200/200?random=345",
+        "title": "Ürün 2",
+        "items": 20
+      },
+      {
+        "id": 3,
+        "image": "https://picsum.photos/200/200?random=213",
+        "title": "Ürün 3",
+        "items": 30
+      },
+      {
+        "id": 4,
+        "image": "https://picsum.photos/200/200?random=532",
+        "title": "Ürün 4",
+        "items": 40
+      },
+      {
+        "id": 5,
+        "image": "https://picsum.photos/200/200?random=367",
+        "title": "Ürün 5",
+        "items": 50
+      }
+    ],
+    "clients":[
+      {
+        "name": "Hoooli",
+        "image": "../../public/Vector.svg"
+      },
+      {
+        "name": "Lyft",
+        "image": "../../Vector2.svg"
+      },
+      {
+        "name": "Feather",
+        "image": "../../Vector3.svg"
+      },
+      {
+        "name": "Stripe",
+        "image": "../../Vector4.svg"
+      },
+      {
+        "name": "AWS",
+        "image": "../../Vector5.svg"
+      },
+      {
+        "name": "Reddit",
+        "image": "../../Vector6.svg"
+      }
+    ]
+  }
+  }
