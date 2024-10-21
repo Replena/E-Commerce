@@ -10,10 +10,18 @@ export default {
         muted: "#BDBDBD",
         success: "#2DC071",
         lightblue: "#8EC2F2",
+        red: "#E74040",
         text: {
           default: "#252B42",
           secondary: "#737373",
           light: "#FFFFFF",
+        },
+      },
+      container: {
+        center: true,
+        padding: {
+          DEFAULT: "2rem",
+          lg: "60px",
         },
       },
     },

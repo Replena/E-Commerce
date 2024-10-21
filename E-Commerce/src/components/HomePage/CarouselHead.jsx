@@ -5,7 +5,7 @@ import {
   CarouselItem,
   CarouselPrevious,
   CarouselNext,
-} from "@/components/ui/carousel";
+} from "../ui/carousel.jsx";
 
 const CarouselHead = ({ carouselData }) => {
   return (

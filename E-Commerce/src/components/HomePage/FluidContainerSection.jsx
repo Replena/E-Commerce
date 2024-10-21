@@ -1,6 +1,6 @@
 import FluidContainerImg from "./FluidContainerImg.jsx";
 import FluidContainerText from "./FluidContainerText.jsx";
-import data from "../data/data.json";
+import data from "../../data/data.json";
 
 const FluidContainerSection = () => {
   const { season, title, subtitle, button1, button2, imageUrl } =

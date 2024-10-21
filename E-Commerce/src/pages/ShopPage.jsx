@@ -1,6 +1,6 @@
-import ShopContent from "@/layout/ShopContent.jsx";
+import ShopContent from "../layout/ShopContent.jsx";
 import Header from "../layout/Header.jsx";
-import Footer from "@/layout/Footer.jsx";
+import Footer from "../layout/Footer.jsx";
 function ShopPage() {
   return (
     <div>

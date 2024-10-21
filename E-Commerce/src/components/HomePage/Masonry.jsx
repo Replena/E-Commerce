@@ -1,11 +1,11 @@
 import React from "react";
-import data from "../data/data.json";
-import ShopCards from "./ShopCard";
+import data from "../../data/data.json";
+import ShopCards from "./ShopCard.jsx";
 
 const Masonry = () => {
   return (
-    <div className="grid grid-cols-1 grid-rows-6 md:grid-cols-4 md:grid-rows-2 gap-11 px-8 lg:pl-60 lg:pr-60 lg:pb-60">
-      <div className="col-span-1 row-span-2 md:col-span-2 md:row-span-2 bg-blue-500">
+    <div className="grid grid-cols-1 grid-rows-6 md:grid-cols-4 md:grid-rows-2 gap-11 container">
+      <div className="col-span-1 row-span-2 md:col-span-2 md:row-span-2">
         {data.shopCards[0] && (
           <ShopCards
             imageUrl={data.shopCards[0].imageUrl}
@@ -14,7 +14,7 @@ const Masonry = () => {
         )}
       </div>
 
-      <div className="col-span-1 row-span-2 md:col-span-1 md:row-span-2 bg-green-500 h-full">
+      <div className="col-span-1 row-span-2 md:col-span-1 md:row-span-2  h-full">
         {data.shopCards[1] && (
           <ShopCards
             imageUrl={data.shopCards[1].imageUrl}
@@ -23,7 +23,7 @@ const Masonry = () => {
         )}
       </div>
 
-      <div className="col-span-1 row-span-1 md:col-span-1 md:row-span-1 bg-red-500">
+      <div className="col-span-1 row-span-1 md:col-span-1 md:row-span-1">
         {data.shopCards[2] && (
           <ShopCards
             imageUrl={data.shopCards[2].imageUrl}
@@ -32,7 +32,7 @@ const Masonry = () => {
         )}
       </div>
 
-      <div className="col-span-1 row-span-1 md:col-span-1 md:row-span-1 bg-yellow-500">
+      <div className="col-span-1 row-span-1 md:col-span-1 md:row-span-1">
         {data.shopCards[3] && (
           <ShopCards
             imageUrl={data.shopCards[3].imageUrl}

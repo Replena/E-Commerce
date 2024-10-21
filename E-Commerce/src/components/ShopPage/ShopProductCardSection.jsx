@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import Products from "./Products";
+import Products from "../Products.jsx";
 import {
   Pagination,
   PaginationContent,
   PaginationItem,
   PaginationLink,
-} from "@/components/ui/pagination";
-import data from "../data/data.json";
+} from "../ui/pagination.jsx";
+import data from "../../data/data.json";
 
 function ShopProductCardSection() {
   const [currentPage, setCurrentPage] = useState(1);
@@ -20,7 +20,7 @@ function ShopProductCardSection() {
   };
 
   return (
-    <div>
+    <div className="container">
       <Products itemsPerPage={itemsPerPage} currentPage={currentPage} />
 
       <Pagination className="my-5">

@@ -1,4 +1,4 @@
-import { Button } from "./ui/button.jsx";
+import { Button } from "../ui/button.jsx";
 
 import {
   ChevronRightIcon,
@@ -14,19 +14,19 @@ const BlogProduct = ({ blog }) => {
           alt={blog.title}
           className="w-full object-cover "
         />
-        <span className="absolute top-2 left-2 bg-red-500 text-white text-sm font-bold px-3 py-2 rounded">
+        <span className="absolute top-2 left-2 bg-red text-text-light text-sm font-bold px-3 py-2 rounded">
           {blog.cardInfo}
         </span>
       </div>
       <div className="p-4">
-        <div className="text-sm text-gray-400 space-x-2">
-          <span>{blog.category1}</span>
+        <div className="text-sm text-text-secondary space-x-2">
+          <span className="text-lightblue">{blog.category1}</span>
           <span>{blog.category2}</span>
           <span>{blog.category3}</span>
         </div>
-        <h3 className="font-bold text-xl mt-2">{blog.title}</h3>
-        <p className="text-gray-600 mt-2">{blog.description}</p>
-        <div className="mt-4 text-sm text-gray-400 flex justify-between">
+        <h3 className=" text-xl mt-2">{blog.title}</h3>
+        <p className="text-text-secondary mt-2">{blog.description}</p>
+        <div className="mt-4 text-sm text-text-secondary flex justify-between">
           <div className="flex items-center space-x-1">
             <span>
               <CalendarIcon className="size-6" />
