@@ -8,3 +8,16 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* border: 1px solid black;*/
+}
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+  }
+}
