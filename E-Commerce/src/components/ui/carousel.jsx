@@ -20,6 +20,7 @@ const Carousel = React.forwardRef(
       orientation = "horizontal",
       opts = { loop: true },
       setApi,
+      onItemChange,
       plugins,
       className,
       children,
@@ -33,12 +34,21 @@ const Carousel = React.forwardRef(
     );
     const [canScrollPrev, setCanScrollPrev] = React.useState(false);
     const [canScrollNext, setCanScrollNext] = React.useState(false);
+    const [selectedIndex, setSelectedIndex] = React.useState(0);
 
-    const onSelect = React.useCallback((api) => {
-      if (!api) return;
-      setCanScrollPrev(api.canScrollPrev());
-      setCanScrollNext(api.canScrollNext());
-    }, []);
+    const onSelect = React.useCallback(
+      (api) => {
+        if (!api) return;
+        setCanScrollPrev(api.canScrollPrev());
+        setCanScrollNext(api.canScrollNext());
+        const index = api.selectedScrollSnap();
+        setSelectedIndex(index);
+        if (onItemChange) {
+          onItemChange(index);
+        }
+      },
+      [onItemChange]
+    );
 
     const scrollPrev = React.useCallback(() => {
       api?.scrollPrev();
@@ -105,6 +115,7 @@ const Carousel = React.forwardRef(
     );
   }
 );
+
 Carousel.displayName = "Carousel";
 
 const CarouselContent = React.forwardRef(({ className, ...props }, ref) => {

@@ -7,11 +7,30 @@ import data from "../data/data.json";
 
 function PageContent() {
   return (
-    <div>
-      <CarouselHead carouselData={data.carousel} showDetails={true} />
+    <div className="flex flex-col w-full">
+      <section className="h-screen w-full">
+        <CarouselHead
+          carouselData={data.carousel}
+          showDetails={true}
+          fullWidth={true}
+          containerClassName="h-full"
+          imageClassName="object-cover"
+        />
+      </section>
+
       <ShopCardSection />
       <ProductCardSection />
-      <CarouselHead carouselData={data.carousel2} showDetails={true} />
+
+      <section className="h-screen w-full">
+        <CarouselHead
+          carouselData={data.carousel2}
+          showDetails={true}
+          fullWidth={true}
+          containerClassName="h-full"
+          imageClassName="object-cover"
+        />
+      </section>
+
       <FluidContainerSection />
       <BlogSection />
     </div>

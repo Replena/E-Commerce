@@ -6,9 +6,9 @@ function BestSeller() {
   return (
     <div className="bg-lightGray">
       <div className="container py-16">
-        <div className=" pb-5  text-text-default font-bold">
-          <p className="text-3xl">{data.productPage.bestSellerTitle}</p>
-        </div>
+        <p className="text-3xl text-center lg:text-start  pb-5  text-text-default font-bold">
+          {data.productPage.bestSellerTitle}
+        </p>
         <hr className="w-full h-1 bg-muted rounded-md mb-5" />
         <div className="">
           <Products

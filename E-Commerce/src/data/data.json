@@ -527,6 +527,9 @@
   },
   
     "productPage": {
+
+"breadcrumb": ["Home","Shop"],
+
       "carousel3": [
         {
           "imageUrl": "https://picsum.photos/1920/800?random=1",
@@ -577,6 +580,45 @@
           ]
         }
       ],
+      "productDescription": {
+        "productDescriptionSection": {
+          "titles": [
+            "Description",
+            "Additional Information",
+            "Reviews"
+          ]
+        },
+        "title1": "Description",
+        "image": {
+          "src": "https://picsum.photos/200/200?random=99",
+          "alt": "the quick fox jumps over"
+        },
+        "descriptionContent": [
+          {
+            "text": "Met minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
+          },
+          {
+            "text": "Met minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
+          },
+          {
+            "text": "Met minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
+          }
+        ],
+        "title2": "Additional Information",
+        "additionalInfo": [
+          "the quick fox jumps over the lazy dog",
+          "the quick fox jumps over the lazy dog",
+          "the quick fox jumps over the lazy dog",
+          "the quick fox jumps over the lazy dog"
+        ],
+        "title3": "Reviews (0)",
+        "reviews": [
+          "the quick fox jumps over the lazy dog",
+          "the quick fox jumps over the lazy dog",
+          "the quick fox jumps over the lazy dog",
+          "the quick fox jumps over the lazy dog"
+        ]
+      },
       "bestSellerTitle": "Best Sellers",
       "product":
       

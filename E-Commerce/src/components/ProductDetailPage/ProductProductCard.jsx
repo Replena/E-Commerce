@@ -1,33 +1,34 @@
-import React, { useState } from "react";
+import React from "react";
 import CarouselHead from "../CarouselHead";
-import data from "../../data/data.json";
 
-function ProductProductCard() {
-  const { carousel3 } = data.productPage;
-  const [activeIndex, setActiveIndex] = useState(0);
+function ProductProductCard({ carouselData, showDetails, onItemChange }) {
+  const [api, setApi] = React.useState(null);
 
   const handleThumbnailClick = (index) => {
-    setActiveIndex(index);
+    if (api) {
+      api.scrollTo(index);
+    }
+    onItemChange(index);
   };
 
   return (
-    <div className="w-full md:w-1/2 order-0 md:order-1">
-      <CarouselHead
-        carouselData={carousel3}
-        activeIndex={activeIndex}
-        showDetails={false}
-      />
-
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-4">
-        {carousel3.map((item, index) => (
+    <div className="w-full md:w-1/2 order-0 md:order-1 h-full">
+      <div className="flex-grow">
+        <CarouselHead
+          carouselData={carouselData}
+          showDetails={showDetails}
+          onItemChange={onItemChange}
+          setApi={setApi}
+        />
+      </div>
+      <div className="grid grid-cols-3 sm:grid-cols-4 gap-4 mt-4">
+        {carouselData.map((item, index) => (
           <img
             key={index}
             src={item.imageUrl}
-            alt={`Thumbnail ${index}`}
-            className={`cursor-pointer h-24 ${
-              activeIndex === index ? "border-4 border-primary" : ""
-            }`}
+            alt={`${index}`}
             onClick={() => handleThumbnailClick(index)}
+            className="cursor-pointer"
           />
         ))}
       </div>

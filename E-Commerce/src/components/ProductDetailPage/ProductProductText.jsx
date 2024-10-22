@@ -6,30 +6,33 @@ import {
   HeartIcon,
 } from "@heroicons/react/24/outline";
 import { Button } from "../ui/button.jsx";
+
 function ProductProductText({ product }) {
-  const reviewCount = parseInt(product.review.split(" ")[0], 10);
-  const stars = Math.round(reviewCount / 100);
   return (
-    <div className="w-full md:w-1/2  order-1 md:order-2">
+    <div className="w-full md:w-1/2 order-1 md:order-2 h-full">
       <h2 className="text-2xl font-bold mb-4 text-text-default">
         {product.productName}
       </h2>
       <div className="flex items-center gap-2 mb-4">
-        {[...Array(stars)].map((_, index) => (
+        {[...Array(5)].map((_, index) => (
           <StarIcon key={index} className="w-4 h-4 text-yellow" />
         ))}
-        <p className="text-lg text-text-secondary">{product.review}</p>
+        <p className="text-lg text-text-secondary font-bold">
+          {product.review}
+        </p>
       </div>
-      <p className="text-3xl font-bold text-text-default">
+      <p className="text-3xl font-bold text-text-default my-2">
         ${product.productPrice}
       </p>
-      <div className="flex">
+      <div className="flex mb-7">
         <p className="text-text-secondary font-bold">{product.availability}</p>
         <div className="mx-2">:</div>
         <p className="text-primary">{product.availabilityStatus}</p>
       </div>
-      <p className="text-text-lightSecondary mb-6">{product.description}</p>
-      <hr className="w-100 h-1  bg-muted rounded md:my-10 " />
+      <p className="text-text-lightSecondary mb-6 font-semibold">
+        {product.description}
+      </p>
+      <hr className="w-100 h-1 bg-muted rounded my-10" />
       <div className="flex gap-4 mb-6">
         {product.colors.map((color, index) => (
           <span
@@ -40,7 +43,7 @@ function ProductProductText({ product }) {
         ))}
       </div>
 
-      <div className="flex gap-4">
+      <div className="flex gap-5 justify-evenly md:justify-start">
         {product.buttons.map((button, index) => (
           <Button
             key={index}
