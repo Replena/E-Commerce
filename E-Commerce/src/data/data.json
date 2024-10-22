@@ -730,5 +730,249 @@
     "ctaText": "Try it free now",
     "ctaLink": "#"
   }
+  },
+  "team":{
+    "innerHeader":{
+      "subtitle":"What we do",
+      "title":"Innovation tailored for you",
+      "home":"Home",
+      "team":"Team"
+    
+    },
+    "heroPicture" : [
+      {
+        "id": 1,
+        "src": "https://picsum.photos/200/200?random=61",
+        "alt": "Fashion model in floral dress"
+      },
+      {
+        "id": 2,
+        "src": "https://picsum.photos/200/200?random=61",
+        "alt": "Fashion model in floral dress"
+      },
+      {
+        "id": 3,
+        "src": "https://picsum.photos/200/200?random=61",
+        "alt": "Fashion model in floral dress"
+      },
+      {
+        "id": 4,
+        "src": "https://picsum.photos/200/200?random=61",
+        "alt": "Fashion model in floral dress"
+      },
+      {
+        "id": 5,
+        "src": "https://picsum.photos/200/200?random=61",
+        "alt": "Fashion model in floral dress"
+      }
+    ],
+    "teamMemberTitle": "Meet Our Team",
+    "teamMembers": [
+  {
+    "id": 1,
+    "name": "John Doe",
+    "position": "CEO",
+    "image": "https://picsum.photos/200/200?random=61",
+    "socialMedia": [
+      {
+        "icon": "fa-brands fa-facebook",
+        "link": "#"
+      },
+      {
+        "icon": "fa-brands fa-twitter",
+        "link": "#"
+      },
+      {
+        "icon": "fa-brands fa-instagram",
+        "link": "#"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Jane Smith",
+    "position": "CTO",
+    "image": "https://picsum.photos/200/200?random=62",
+    "socialMedia": [
+      {
+        "icon": "fa-brands fa-facebook",
+        "link": "#"
+      },
+      {
+        "icon": "fa-brands fa-twitter",
+        "link": "#"
+      },
+      {
+        "icon": "fa-brands fa-linkedin",
+        "link": "#"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Alice Johnson",
+    "position": "CFO",
+    "image": "https://picsum.photos/200/200?random=63",
+    "socialMedia": [
+      {
+        "icon": "fa-brands fa-facebook",
+        "link": "#"
+      },
+      {
+        "icon": "fa-brands fa-twitter",
+        "link": "#"
+      },
+      {
+        "icon": "fa-brands fa-pinterest",
+        "link": "#"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Bob Brown",
+    "position": "COO",
+    "image": "https://picsum.photos/200/200?random=64",
+    "socialMedia": [
+      {
+        "icon": "fa-brands fa-facebook",
+        "link": "#"
+      },
+      {
+        "icon": "fa-brands fa-twitter",
+        "link": "#"
+      },
+      {
+        "icon": "fa-brands fa-reddit",
+        "link": "#"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Charlie Davis",
+    "position": "CMO",
+    "image": "https://picsum.photos/200/200?random=65",
+    "socialMedia": [
+      {
+        "icon": "fa-brands fa-facebook",
+        "link": "#"
+      },
+      {
+        "icon": "fa-brands fa-twitter",
+        "link": "#"
+      },
+      {
+        "icon": "fa-brands fa-youtube",
+        "link": "#"
+      }
+    ]
+  },
+  
+  {
+    "id": 6,
+    "name": "Diana Green",
+    "position": "Lead Developer",
+    "image": "https://picsum.photos/200/200?random=66",
+    "socialMedia": [
+      {
+        "icon": "fa-brands fa-facebook",
+        "link": "#"
+      },
+      {
+        "icon": "fa-brands fa-twitter",
+        "link": "#"
+      },
+      {
+        "icon": "fa-brands fa-github",
+        "link": "#"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Ethan White",
+    "position": "UX/UI Designer",
+    "image": "https://picsum.photos/200/200?random=67",
+    "socialMedia": [
+      {
+        "icon": "fa-brands fa-facebook",
+        "link": "#"
+      },
+      {
+        "icon": "fa-brands fa-twitter",
+        "link": "#"
+      },
+      {
+        "icon": "fa-brands fa-behance",
+        "link": "#"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Fiona Black",
+    "position": "Content Strategist",
+    "image": "https://picsum.photos/200/200?random=68",
+    "socialMedia": [
+      {
+        "icon": "fa-brands fa-facebook",
+        "link": "#"
+      },
+      {
+        "icon": "fa-brands fa-twitter",
+        "link": "#"
+      },
+      {
+        "icon": "fa-brands fa-dribbble",
+        "link": "#"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Jane Smith",
+    "position": "CTO",
+    "image": "https://picsum.photos/200/200?random=62",
+    "socialMedia": [
+      {
+        "icon": "fa-brands fa-facebook",
+        "link": "#"
+      },
+      {
+        "icon": "fa-brands fa-twitter",
+        "link": "#"
+      },
+      {
+        "icon": "fa-brands fa-linkedin",
+        "link": "#"
+      }
+    ]
+  }
+],
+"teamCta": {
+  "title": "Start your 14 days free trial",
+  "description": "Met minim Mollie non desert Alamo est sit cliquey dolor do met sent. RELIT official consequent.",
+  "buttonText": "Try it free now",
+  "socialLinks": [
+    {
+      "icon": "fab fa-twitter",
+      "url": "#"
+    },
+    {
+      "icon": "fab fa-facebook-f",
+      "url": "#"
+    },
+    {
+      "icon": "fab fa-instagram",
+      "url": "#"
+    },
+    {
+      "icon": "fab fa-linkedin-in",
+      "url": "#"
+    }
+  ]
+}
+
   }
 }
