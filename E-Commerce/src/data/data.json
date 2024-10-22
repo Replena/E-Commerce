@@ -672,7 +672,63 @@
           "imageUrl": "https://picsum.photos/200/200?random=61"
         }
     ]
-  }}
-  
-  
+  },
 
+  "contact": {
+    "contactHeader": {
+      "sectionTitle": "Contact us",
+      "title": "Get in touch today!",
+      "subtitle": "We know how large objects will act, but things on a small scale",
+      "contactInfo": {
+        "phoneLabel": "Phone",
+        "phone": "+451 215 215",
+        "faxLabel": "Fax",
+        "fax": "+451 215 215"
+      },
+      "socialLinks": [
+        { "id": 1, "icon": "twitter", "link": "#" },
+        { "id": 2, "icon": "facebook", "link": "#" },
+        { "id": 3, "icon": "instagram", "link": "#" },
+        { "id": 4, "icon": "linkedin", "link": "#" }
+      ],
+      "image": "https://picsum.photos/200/200?random=61"
+    },
+    
+  "contactPage": {
+    "headerSubtitle": "Visit Our Office",
+    "headerTitle": "We help small businesses with big ideas",
+    "contacts": [
+      {
+        "icon": "phone",
+        "email1": "georgia.young@example.com",
+        "email2": "georgia.young@ple.com",
+        "label": "Get Support",
+        "buttonLabel": "Submit Request"
+      },
+      {
+        "icon": "mapPin",
+        "email1": "georgia.young@example.com",
+        "email2": "georgia.young@ple.com",
+        "label": "Get Support",
+        "buttonLabel": "Submit Request"
+      },
+      {
+        "icon": "telegram",
+        "email1": "georgia.young@example.com",
+        "email2": "georgia.young@ple.com",
+        "label": "Get Support",
+        "buttonLabel": "Submit Request"
+      }
+    ]
+  },
+  "contactCta":
+  {
+    "arrow":"../../Arrow2.svg",
+    
+    "title": "We Can't Wait to Meet You",
+    "description": "Let's Talk",
+    "ctaText": "Try it free now",
+    "ctaLink": "#"
+  }
+  }
+}

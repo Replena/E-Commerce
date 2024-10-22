@@ -14,7 +14,7 @@ const buttonVariants = cva(
         destructive:
           "bg-red text-text-light hover:bg-red/90 dark:bg-red-900 dark:text-text-light dark:hover:bg-red-900/90",
         outline:
-          "border border-muted bg-lightGray hover:bg-lightGray hover:text-text-default dark:border-slate-800 dark:bg-slate-950 dark:hover:bg-slate-800 dark:hover:text-text-light",
+          "border border-primary rounded-full text-primary hover:text-text-light hover:bg-primary dark:border-text-default dark:bg-slate-950 dark:hover:bg-text-default dark:hover:text-text-light",
         secondary:
           "bg-secondary text-text-light hover:bg-secondary/80 dark:bg-secondary dark:text-text-light dark:hover:bg-secondary/80",
         ghostPrimary:
@@ -32,7 +32,7 @@ const buttonVariants = cva(
       size: {
         default: "h-10 px-4 py-2",
         sm: "h-9 rounded-md px-3",
-        lg: "h-11 rounded-sm px-9 font-bold text-lg",
+        lg: "h-14 rounded-md px-9 font-bold text-lg",
         icon: "h-10 w-10",
         wopadding: "p-0",
       },
