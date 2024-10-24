@@ -41,11 +41,11 @@ const CarouselHead = ({
   }, [carouselApi, setApi]);
 
   const containerClasses = fullWidth
-    ? `relative w-full h-full ${containerClassName}`
+    ? ` ${containerClassName}`
     : `relative w-full max-w-4xl mx-auto ${containerClassName}`;
 
   const defaultImageClass = fullWidth
-    ? "w-full h-full object-cover"
+    ? ""
     : "w-full h-full object-cover rounded-lg";
   const finalImageClass = `${defaultImageClass} ${imageClassName}`;
 
@@ -53,7 +53,7 @@ const CarouselHead = ({
     <div className={containerClasses}>
       <Carousel
         setApi={setCarouselApi}
-        className="w-full h-full"
+        className=""
         opts={{
           loop: true,
         }}
