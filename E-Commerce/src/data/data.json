@@ -974,5 +974,81 @@
   ]
 }
 
+  },
+  "about": {
+  "aboutHeader":
+  {
+    "companySection": "ABOUT COMPANY",
+    "title": "ABOUT US",
+    "description": "We know how large objects will act, but things on a small scale",
+    "buttonText": "Get Quote Now",
+    "image": "https://picsum.photos/200/200?random=62",
+    "imageAlt": "Shopping woman with bags"
+  },
+  "aboutContentStats":{
+  "aboutSection": {
+    "topText": "Problems trying",
+    "heading": "Met minim Mollie non desert Alamo est sit cliquey dolor do met sent.",
+    "description": "Problems trying to resolve the conflict between the two major realms of Classical physics: Newtonian mechanics",
+    "stats": [
+      {
+        "value": "15K",
+        "label": "Happy Customers"
+      },
+      {
+        "value": "150K",
+        "label": "Monthly Visitors"
+      },
+      {
+        "value": "15",
+        "label": "Countries Worldwide"
+      },
+      {
+        "value": "100+",
+        "label": "Top Partners"
+      }
+    ]
+  },
+  "headerSection": {
+    "logo": "Brandname",
+    "navigation": [
+      "Home",
+      "Product",
+      "Pricing",
+      "Contact"
+    ]
+  },
+  "heroSection": {
+    "title": "Creating a Beautifully-Crafted Website",
+    "subtitle": "Strongest Cloud Platform Ever",
+    "description": "We know how large objects will act, but things on a small scale just do not act that way.",
+    "buttons": {
+      "primary": "Get Quote Now",
+      "secondary": "Learn More"
+    }
+  },
+  "featuresSection": {
+    "title": "Better Strategy With Quality Business",
+    "features": [
+      {
+        "icon": "financial",
+        "title": "Investment Trading",
+        "description": "The gradual accumulation of information about atomic."
+      },
+      {
+        "icon": "business",
+        "title": "Raising Funds",
+        "description": "The gradual accumulation of information about atomic."
+      }
+    ]
   }
+},
+"testimonials": {
+  "title": "WORK WITH US",
+  "subtitle": "Now Let’s grow Yours",
+  "description": "The gradual accumulation of information about atomic and small-scale behavior during the first quarter of the 20th",
+  "buttonText": "Button",
+  "imageURL": "../../unsplash_vjMgqUkS8q8.jpg"
+}
+}
 }

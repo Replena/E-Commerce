@@ -8,7 +8,7 @@ import data from "../data/data.json";
 function PageContent() {
   return (
     <div className="flex flex-col w-full">
-      <section className="h-screen w-full">
+      <section className="h-full w-full flex-1">
         <CarouselHead
           carouselData={data.carousel}
           showDetails={true}
