@@ -6,6 +6,7 @@ import ContactPage from "./pages/ContactPage.jsx";
 import TeamPage from "./pages/TeamPage.jsx";
 import AboutPage from "./pages/AboutPage.jsx";
 import Layout from "./layout/LayOut.jsx";
+import SignUpPage from "./pages/SignUpPage.jsx";
 function App() {
   return (
     <>
@@ -18,6 +19,7 @@ function App() {
           <Route path="contact" element={<ContactPage />} />
           <Route path="team" element={<TeamPage />} />
           <Route path="about" element={<AboutPage />} />
+          <Route path="signup" element={<SignUpPage />} />
         </Routes>
       </Layout>
     </>
