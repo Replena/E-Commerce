@@ -6,7 +6,7 @@ function Layout(props) {
   return (
     <Fragment>
       <Header />
-      <main className="w-full">{props.children}</main>
+      <main className="flex-grow w-full">{props.children}</main>
       <Footer />
     </Fragment>
   );

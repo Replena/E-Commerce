@@ -5,7 +5,7 @@ import ProductPage from "./pages/ProductPage.jsx";
 import ContactPage from "./pages/ContactPage.jsx";
 import TeamPage from "./pages/TeamPage.jsx";
 import AboutPage from "./pages/AboutPage.jsx";
-import Layout from "./layout/LayOut.jsx";
+import Layout from "./layout/Layout.jsx";
 import SignUpPage from "./pages/SignUpPage.jsx";
 import LoginPage from "./pages/LoginPage.jsx";
 import { ToastContainer } from "react-toastify";
@@ -18,7 +18,7 @@ function App() {
     verifyToken(dispatch);
   }, [dispatch]);
   return (
-    <>
+    <div className="flex flex-col min-h-screen">
       <Layout>
         <ToastContainer />
         <Routes>
@@ -33,7 +33,7 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
         </Routes>
       </Layout>
-    </>
+    </div>
   );
 }
 

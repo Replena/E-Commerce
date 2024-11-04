@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { loginUser } from "../redux/actions/clientActions";
 import { toast } from "react-toastify";
@@ -9,6 +9,7 @@ import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 
 const LoginForm = () => {
+  const avatar = useSelector((state) => state.client.user.gravatarUrl);
   const {
     register,
     handleSubmit,
@@ -25,10 +26,10 @@ const LoginForm = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const onSubmit = async (data) => {
+  const onSubmit = (data) => {
     setIsLoading(true);
 
-    const result = await dispatch(loginUser(data));
+    const result = dispatch(loginUser(data));
     setIsLoading(false);
 
     if (result) {
@@ -37,6 +38,7 @@ const LoginForm = () => {
     } else {
       toast.error("Login failed. Please try again.");
     }
+    console.log(data);
   };
 
   return (
@@ -74,13 +76,26 @@ const LoginForm = () => {
       </div>
 
       <div className="flex items-center">
-        <Checkbox {...register("rememberMe")} />
-        <label className="ml-2 text-sm">Remember Me</label>
+        <Input
+          type="checkbox"
+          {...register("rememberMe")}
+          id="rememberMe"
+          className="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
+        />
+        <label
+          htmlFor="rememberMe"
+          className="text-h5-md text-accent cursor-pointer"
+        >
+          Beni Hatırla
+        </label>
       </div>
 
       <Button type="submit" className="w-full mt-4" disabled={isLoading}>
         {isLoading ? "Logging in..." : "Login"}
       </Button>
+      {avatar && (
+        <img src={avatar} alt="avatar" className="w-12 h-12 mx-auto" />
+      )}
     </form>
   );
 };

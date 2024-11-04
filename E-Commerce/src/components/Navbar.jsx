@@ -18,10 +18,13 @@ import {
 } from "./ui/navigation-menu.jsx";
 import { Link } from "react-router-dom";
 import { fetchCategories } from "@/redux/actions/thunkActions";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { clearUser } from "@/redux/actions/clientActions";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const userData = useSelector((state) => state.client.user);
   const dispatch = useDispatch();
   const links = data.navbar.links;
 
@@ -39,11 +42,21 @@ const Navbar = () => {
     setMenuOpen((prev) => !prev);
   };
 
+  const toggleDropdown = () => {
+    setDropdownOpen((prev) => !prev);
+  };
+
+  const handleLogout = () => {
+    dispatch(clearUser());
+    clearAuthData();
+    window.location.href = "/";
+  };
+
   return (
     <nav className="bg-text-light">
       <div className="flex flex-col justify-between p-6 container">
         <div className="flex justify-between items-center w-full">
-          <div className="flex gap-28 ">
+          <div className="flex gap-28">
             <div className="text-xl font-bold">
               <Button
                 variant="ghost"
@@ -110,22 +123,59 @@ const Navbar = () => {
           </div>
 
           <div className="flex items-center space-x-4 ">
-            <Button variant="ghostPrimary" size="wopadding">
-              <UserIcon className="h-6 w-6" />
-            </Button>
+            <div className="relative">
+              <div
+                className="flex items-center cursor-pointer"
+                onClick={toggleDropdown}
+              >
+                {userData.gravatarUrl && userData.name ? (
+                  <>
+                    <img
+                      src={userData.gravatarUrl}
+                      alt={userData.name}
+                      className="w-12 h-12 rounded-full border-2 border-primary"
+                    />
+                    <h3 className="ml-2 text-text-secondary">
+                      {userData.name}
+                    </h3>
+                  </>
+                ) : (
+                  <div className="hidden lg:flex items-center space-x-4 ">
+                    <div className=" flex ">
+                      <Button variant="ghostPrimary" size="wopadding">
+                        <Link to={data.navbar.auth.login.href}>
+                          {data.navbar.auth.login.name}
+                        </Link>
+                      </Button>
 
-            <div className="hidden lg:flex items-center space-x-4 ">
-              <div className="flex ">
-                <Button variant="ghostPrimary" size="wopadding">
-                  <Link to="/login">{data.navbar.auth.login.name}</Link>
-                </Button>
-
-                <div className="mx-2 text-primary">/</div>
-                <Button variant="ghostPrimary" size="wopadding">
-                  <Link to="/signup">{data.navbar.auth.register.name}</Link>
-                </Button>
+                      <div className="mx-2 text-primary">/</div>
+                      <Button variant="ghostPrimary" size="wopadding">
+                        <Link to={data.navbar.auth.register.href}>
+                          {data.navbar.auth.register.name}
+                        </Link>
+                      </Button>
+                    </div>
+                  </div>
+                )}
               </div>
+              {dropdownOpen && userData.gravatarUrl && (
+                <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-10">
+                  <Link
+                    to="/profile"
+                    className="block px-4 py-2 text-text-secondary hover:bg-gray-200"
+                  >
+                    Profil Ayarları
+                  </Link>
+                  <button
+                    onClick={handleLogout}
+                    className="block w-full text-left px-4 py-2 text-text-secondary hover:bg-gray-200"
+                  >
+                    Çıkış Yap
+                  </button>
+                </div>
+              )}
             </div>
+
             <Button variant="ghostPrimary" size="wopadding">
               <MagnifyingGlassIcon className="h-6 w-6" />
             </Button>

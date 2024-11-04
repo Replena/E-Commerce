@@ -34,8 +34,8 @@
       }
     },
     "auth": {
-      "login": { "name": "Login", "href": "#" },
-      "register": { "name": "Register", "href": "#" }
+      "login": { "name": "Login", "href": "/login" },
+      "register": { "name": "Register", "href": "/signup" }
     },
     "contact": {
       "phone": "(225) 555-0118",

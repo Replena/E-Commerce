@@ -4,10 +4,9 @@ import { api } from "@/axios/userFetch";
 import { setCurrentUser } from "./clientActions";
 import { setCategories, setFetchState } from "./productActions";
 export const loginUser = (credentials) => {
-  const { email, password, rememberMe } = credentials;
   return async (dispatch) => {
     try {
-      const response = await api.post("/login", { email, password });
+      const response = await api.post("/login", { ...credentials });
       const userData = response.data;
       const userDataWithGravatar = {
         ...userData,
@@ -15,7 +14,7 @@ export const loginUser = (credentials) => {
       };
       dispatch(setCurrentUser(userDataWithGravatar));
 
-      if (rememberMe) {
+      if (credentials.rememberMe) {
         localStorage.setItem("token", userData.token);
       }
       return true;
@@ -77,7 +76,7 @@ export const verifyToken = (dispatch) => {
           token: token,
         };
 
-        dispatch(setUser(userInfo));
+        dispatch(setCurrentUser(userInfo));
         return true;
       }
       return false;
