@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { login } from "../redux/actions/clientActions";
+import { loginUser } from "../redux/actions/clientActions";
 import { toast } from "react-toastify";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -13,22 +13,32 @@ const LoginForm = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm({
+    defaultValues: {
+      email: "",
+      password: "",
+      rememberMe: false,
+    },
+  });
+
   const [isLoading, setIsLoading] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const onSubmit = async (data) => {
     setIsLoading(true);
-    try {
-      const response = await dispatch(login(data));
-      navigate(-1 || "/");
-    } catch (error) {
+
+    const result = await dispatch(loginUser(data));
+    setIsLoading(false);
+
+    if (result) {
+      toast.success("Giriş başarılı!");
+      navigate("/");
+    } else {
       toast.error("Login failed. Please try again.");
-    } finally {
-      setIsLoading(false);
     }
   };
+
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
@@ -42,7 +52,7 @@ const LoginForm = () => {
             required: "Email is required",
             pattern: { value: /^\S+@\S+$/, message: "Invalid email address" },
           })}
-          className="mt-1 block w-full rounded-md shadow-sm  "
+          className="mt-1 block w-full rounded-md shadow-sm"
         />
         {errors.email && (
           <span className="text-red-500 text-sm">{errors.email.message}</span>
@@ -54,7 +64,7 @@ const LoginForm = () => {
         <Input
           type="password"
           {...register("password", { required: "Password is required" })}
-          className="mt-1 block w-full rounded-md shadow-sm  "
+          className="mt-1 block w-full rounded-md shadow-sm"
         />
         {errors.password && (
           <span className="text-red-500 text-sm">
@@ -68,8 +78,8 @@ const LoginForm = () => {
         <label className="ml-2 text-sm">Remember Me</label>
       </div>
 
-      <Button type="submit" className="w-full mt-4">
-        Login
+      <Button type="submit" className="w-full mt-4" disabled={isLoading}>
+        {isLoading ? "Logging in..." : "Login"}
       </Button>
     </form>
   );

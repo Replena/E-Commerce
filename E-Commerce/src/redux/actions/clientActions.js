@@ -30,7 +30,7 @@ export const setLanguage = (language) => ({
   payload: language,
 });
 
-export const login = (credentials) => {
+export const loginUser = (credentials) => {
   const { email, password, rememberMe } = credentials;
   return async (dispatch) => {
     try {

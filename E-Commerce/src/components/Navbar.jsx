@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import data from "../data/data.json";
 import { Button } from "./ui/button.jsx";
 import {
@@ -17,14 +17,27 @@ import {
   NavigationMenuViewport,
 } from "./ui/navigation-menu.jsx";
 import { Link } from "react-router-dom";
+import { fetchCategories } from "@/redux/actions/thunkActions";
+import { useDispatch } from "react-redux";
 
 const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const dispatch = useDispatch();
   const links = data.navbar.links;
+
   const updatedLinks = [
     links[0],
-    { name: data.navbar.dropdown.shop.name, href: "#" },
+    { name: data.navbar.dropdown.shop.name, href: "/shop" },
     ...links.slice(1),
   ];
+
+  useEffect(() => {
+    dispatch(fetchCategories());
+  }, [dispatch]);
+
+  const toggleMenu = () => {
+    setMenuOpen((prev) => !prev);
+  };
 
   return (
     <nav className="bg-text-light">
@@ -37,7 +50,7 @@ const Navbar = () => {
                 size="wopadding"
                 className="text-xl font-bold"
               >
-                {data.navbar.title}
+                <Link to="/">{data.navbar.title} </Link>
               </Button>
             </div>
             <NavigationMenu className="hidden lg:flex items-center">
@@ -61,12 +74,12 @@ const Navbar = () => {
                                     {data.navbar.dropdown.shop.items[key].map(
                                       (item, itemIndex) => (
                                         <li key={itemIndex}>
-                                          <a
-                                            href={item.href}
+                                          <Link
+                                            to={item.href}
                                             className="text-text-secondary hover:text-primary"
                                           >
                                             {item.name}
-                                          </a>
+                                          </Link>
                                         </li>
                                       )
                                     )}
@@ -82,12 +95,12 @@ const Navbar = () => {
 
                   return (
                     <NavigationMenuItem key={index}>
-                      <a
-                        href={link.href}
+                      <Link
+                        to={link.href}
                         className="text-text-secondary hover:text-primary"
                       >
                         {link.name}
-                      </a>
+                      </Link>
                     </NavigationMenuItem>
                   );
                 })}
@@ -96,25 +109,20 @@ const Navbar = () => {
             </NavigationMenu>
           </div>
 
-          <div className="flex items-center space-x-4  ">
+          <div className="flex items-center space-x-4 ">
             <Button variant="ghostPrimary" size="wopadding">
-              {" "}
               <UserIcon className="h-6 w-6" />
             </Button>
 
             <div className="hidden lg:flex items-center space-x-4 ">
-              <div className=" flex ">
+              <div className="flex ">
                 <Button variant="ghostPrimary" size="wopadding">
-                  <Link href="{data.navbar.auth.login.href}">
-                    {data.navbar.auth.login.name}
-                  </Link>
+                  <Link to="/login">{data.navbar.auth.login.name}</Link>
                 </Button>
 
                 <div className="mx-2 text-primary">/</div>
                 <Button variant="ghostPrimary" size="wopadding">
-                  <a href={data.navbar.auth.register.href}>
-                    {data.navbar.auth.register.name}
-                  </a>
+                  <Link to="/signup">{data.navbar.auth.register.name}</Link>
                 </Button>
               </div>
             </div>
@@ -128,6 +136,7 @@ const Navbar = () => {
               variant="ghostPrimary"
               size="wopadding"
               className="lg:hidden"
+              onClick={toggleMenu}
             >
               <Bars3Icon className="h-6 w-6 lg:hidden" />
             </Button>
@@ -137,15 +146,19 @@ const Navbar = () => {
           </div>
         </div>
 
-        <div className="flex flex-col items-center space-y-4 pt-10 lg:hidden">
+        <div
+          className={`flex flex-col items-center space-y-4 lg:hidden transition-all duration-300 ease-in-out ${
+            menuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+          } overflow-hidden`}
+        >
           {data.navbar.mobileLinks.map((link, index) => (
-            <a
+            <Link
               key={index}
-              href={link.href}
+              to={link.href}
               className="text-text-secondary hover:text-primary"
             >
               {link.name}
-            </a>
+            </Link>
           ))}
         </div>
       </div>

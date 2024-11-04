@@ -9,7 +9,14 @@ import Layout from "./layout/LayOut.jsx";
 import SignUpPage from "./pages/SignUpPage.jsx";
 import LoginPage from "./pages/LoginPage.jsx";
 import { ToastContainer } from "react-toastify";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { verifyToken } from "./redux/actions/thunkActions.js";
 function App() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    verifyToken(dispatch);
+  }, [dispatch]);
   return (
     <>
       <Layout>
