@@ -7,10 +7,13 @@ import TeamPage from "./pages/TeamPage.jsx";
 import AboutPage from "./pages/AboutPage.jsx";
 import Layout from "./layout/LayOut.jsx";
 import SignUpPage from "./pages/SignUpPage.jsx";
+import LoginPage from "./pages/LoginPage.jsx";
+import { ToastContainer } from "react-toastify";
 function App() {
   return (
     <>
       <Layout>
+        <ToastContainer />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="shop" element={<ShopPage />} />
@@ -20,6 +23,7 @@ function App() {
           <Route path="team" element={<TeamPage />} />
           <Route path="about" element={<AboutPage />} />
           <Route path="signup" element={<SignUpPage />} />
+          <Route path="/login" element={<LoginPage />} />
         </Routes>
       </Layout>
     </>

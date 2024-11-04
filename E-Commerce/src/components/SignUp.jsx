@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -13,10 +12,7 @@ import {
 } from "@/components/ui/select";
 import { Loader2 } from "lucide-react";
 import { toast } from "react-toastify";
-
-const api = axios.create({
-  baseURL: "https://workintech-fe-ecommerce.onrender.com",
-});
+import { api } from "@/axios/userFetch";
 
 export default function Signup() {
   const [roles, setRoles] = useState([]);
