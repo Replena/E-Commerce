@@ -30,7 +30,7 @@ export const setLanguage = (language) => ({
   payload: language,
 });
 
-export const login = (credentials) => {
+export const loginUser = (credentials) => {
   const { email, password, rememberMe } = credentials;
   return async (dispatch) => {
     try {
@@ -51,7 +51,14 @@ export const login = (credentials) => {
     }
   };
 };
-
+export const clearAuthData = () => {
+  localStorage.removeItem("token");
+};
+export const logoutUser = () => (dispatch) => {
+  clearAuthData();
+  dispatch(clearUser());
+  toast.success("Başarıyla çıkış yaptınız.");
+};
 export const SET_USER = "SET_USER";
 export const SET_ROLES = "SET_ROLES";
 export const SET_THEME = "SET_THEME";

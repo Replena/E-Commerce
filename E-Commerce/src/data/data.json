@@ -2,17 +2,17 @@
   "navbar": {
     "title": "Bandage",
     "links": [
-      { "name": "Home", "href": "#" },
-      { "name": "About", "href": "#" },
+      { "name": "Home", "href": "/" },
+      { "name": "About", "href": "/about" },
       { "name": "Blog", "href": "#" },
-      { "name": "Contact", "href": "#" },
+      { "name": "Contact", "href": "/contact" },
       { "name": "Pages", "href": "#" }
     ],
     "mobileLinks": [
-      { "name": "Home", "href": "#" },
-      { "name": "Product", "href": "#" },
+      { "name": "Home", "href": "/" },
+      { "name": "Product", "href": "/products" },
       { "name": "Pricing", "href": "#" },
-      { "name": "Contact", "href": "#" }
+      { "name": "Contact", "href": "/contact" }
     ],
     "dropdown": {
       "shop": {
@@ -34,8 +34,8 @@
       }
     },
     "auth": {
-      "login": { "name": "Login", "href": "#" },
-      "register": { "name": "Register", "href": "#" }
+      "login": { "name": "Login", "href": "/login" },
+      "register": { "name": "Register", "href": "/signup" }
     },
     "contact": {
       "phone": "(225) 555-0118",

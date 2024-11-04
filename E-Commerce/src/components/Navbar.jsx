@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import data from "../data/data.json";
 import { Button } from "./ui/button.jsx";
 import {
@@ -16,28 +16,53 @@ import {
   NavigationMenuContent,
   NavigationMenuViewport,
 } from "./ui/navigation-menu.jsx";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { fetchCategories } from "@/redux/actions/thunkActions";
+import { useDispatch, useSelector } from "react-redux";
+import { logoutUser } from "../redux/actions/clientActions";
 
 const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const userData = useSelector((state) => state.client.user);
+  const dispatch = useDispatch();
   const links = data.navbar.links;
+  const navigate = useNavigate();
   const updatedLinks = [
     links[0],
-    { name: data.navbar.dropdown.shop.name, href: "#" },
+    { name: data.navbar.dropdown.shop.name, href: "/shop" },
     ...links.slice(1),
   ];
+
+  useEffect(() => {
+    dispatch(fetchCategories());
+  }, [dispatch]);
+
+  const toggleMenu = () => {
+    setMenuOpen((prev) => !prev);
+  };
+
+  const toggleDropdown = () => {
+    setDropdownOpen((prev) => !prev);
+  };
+
+  const handleLogout = () => {
+    dispatch(logoutUser());
+    navigate("/");
+  };
 
   return (
     <nav className="bg-text-light">
       <div className="flex flex-col justify-between p-6 container">
         <div className="flex justify-between items-center w-full">
-          <div className="flex gap-28 ">
+          <div className="flex gap-28">
             <div className="text-xl font-bold">
               <Button
                 variant="ghost"
                 size="wopadding"
                 className="text-xl font-bold"
               >
-                {data.navbar.title}
+                <Link to="/">{data.navbar.title} </Link>
               </Button>
             </div>
             <NavigationMenu className="hidden lg:flex items-center">
@@ -61,12 +86,12 @@ const Navbar = () => {
                                     {data.navbar.dropdown.shop.items[key].map(
                                       (item, itemIndex) => (
                                         <li key={itemIndex}>
-                                          <a
-                                            href={item.href}
+                                          <Link
+                                            to={item.href}
                                             className="text-text-secondary hover:text-primary"
                                           >
                                             {item.name}
-                                          </a>
+                                          </Link>
                                         </li>
                                       )
                                     )}
@@ -82,12 +107,12 @@ const Navbar = () => {
 
                   return (
                     <NavigationMenuItem key={index}>
-                      <a
-                        href={link.href}
+                      <Link
+                        to={link.href}
                         className="text-text-secondary hover:text-primary"
                       >
                         {link.name}
-                      </a>
+                      </Link>
                     </NavigationMenuItem>
                   );
                 })}
@@ -96,28 +121,62 @@ const Navbar = () => {
             </NavigationMenu>
           </div>
 
-          <div className="flex items-center space-x-4  ">
-            <Button variant="ghostPrimary" size="wopadding">
-              {" "}
-              <UserIcon className="h-6 w-6" />
-            </Button>
-
-            <div className="hidden lg:flex items-center space-x-4 ">
-              <div className=" flex ">
-                <Button variant="ghostPrimary" size="wopadding">
-                  <Link href="{data.navbar.auth.login.href}">
-                    {data.navbar.auth.login.name}
-                  </Link>
-                </Button>
-
-                <div className="mx-2 text-primary">/</div>
-                <Button variant="ghostPrimary" size="wopadding">
-                  <a href={data.navbar.auth.register.href}>
-                    {data.navbar.auth.register.name}
-                  </a>
-                </Button>
+          <div className="flex items-center space-x-4 ">
+            <div className="relative">
+              <div
+                className="flex items-center cursor-pointer"
+                onClick={toggleDropdown}
+              >
+                {userData.gravatarUrl && userData.name ? (
+                  <>
+                    <img
+                      src={userData.gravatarUrl}
+                      alt={userData.name}
+                      className="w-12 h-12 rounded-full  border-primary"
+                    />
+                    <h3 className="ml-2 text-text-secondary">
+                      {userData.name}
+                    </h3>
+                  </>
+                ) : (
+                  <div className="flex items-center">
+                    <Button variant="ghostPrimary" size="wopadding">
+                      <UserIcon className="h-6 w-6 hidden lg:flex" />
+                    </Button>
+                    <div className="flex space-x-2 ml-2">
+                      <Button variant="ghostPrimary" size="wopadding">
+                        <Link to={data.navbar.auth.login.href}>
+                          {data.navbar.auth.login.name}
+                        </Link>
+                      </Button>
+                      <div className="mx-2 text-primary">/</div>
+                      <Button variant="ghostPrimary" size="wopadding">
+                        <Link to={data.navbar.auth.register.href}>
+                          {data.navbar.auth.register.name}
+                        </Link>
+                      </Button>
+                    </div>
+                  </div>
+                )}
               </div>
+              {dropdownOpen && userData.gravatarUrl && (
+                <div className="absolute right-0 mt-2  bg-white rounded-md shadow-lg z-10">
+                  <Link
+                    to="/profile"
+                    className="block px-4 py-2 text-text-secondary hover:text-primary"
+                  >
+                    Profil Ayarları
+                  </Link>
+                  <button
+                    onClick={handleLogout}
+                    className="block text-left px-4 py-2 text-text-secondary hover:text-primary"
+                  >
+                    Çıkış Yap
+                  </button>
+                </div>
+              )}
             </div>
+
             <Button variant="ghostPrimary" size="wopadding">
               <MagnifyingGlassIcon className="h-6 w-6" />
             </Button>
@@ -128,6 +187,7 @@ const Navbar = () => {
               variant="ghostPrimary"
               size="wopadding"
               className="lg:hidden"
+              onClick={toggleMenu}
             >
               <Bars3Icon className="h-6 w-6 lg:hidden" />
             </Button>
@@ -137,15 +197,19 @@ const Navbar = () => {
           </div>
         </div>
 
-        <div className="flex flex-col items-center space-y-4 pt-10 lg:hidden">
+        <div
+          className={`flex flex-col items-center space-y-4 lg:hidden transition-all duration-300 ease-in-out ${
+            menuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+          } overflow-hidden`}
+        >
           {data.navbar.mobileLinks.map((link, index) => (
-            <a
+            <Link
               key={index}
-              href={link.href}
+              to={link.href}
               className="text-text-secondary hover:text-primary"
             >
               {link.name}
-            </a>
+            </Link>
           ))}
         </div>
       </div>
