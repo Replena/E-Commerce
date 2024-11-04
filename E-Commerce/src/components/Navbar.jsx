@@ -16,10 +16,10 @@ import {
   NavigationMenuContent,
   NavigationMenuViewport,
 } from "./ui/navigation-menu.jsx";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { fetchCategories } from "@/redux/actions/thunkActions";
 import { useDispatch, useSelector } from "react-redux";
-import { clearUser } from "@/redux/actions/clientActions";
+import { logoutUser } from "../redux/actions/clientActions";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -27,7 +27,7 @@ const Navbar = () => {
   const userData = useSelector((state) => state.client.user);
   const dispatch = useDispatch();
   const links = data.navbar.links;
-
+  const navigate = useNavigate();
   const updatedLinks = [
     links[0],
     { name: data.navbar.dropdown.shop.name, href: "/shop" },
@@ -47,9 +47,8 @@ const Navbar = () => {
   };
 
   const handleLogout = () => {
-    dispatch(clearUser());
-    clearAuthData();
-    window.location.href = "/";
+    dispatch(logoutUser());
+    navigate("/");
   };
 
   return (
@@ -133,21 +132,23 @@ const Navbar = () => {
                     <img
                       src={userData.gravatarUrl}
                       alt={userData.name}
-                      className="w-12 h-12 rounded-full border-2 border-primary"
+                      className="w-12 h-12 rounded-full  border-primary"
                     />
                     <h3 className="ml-2 text-text-secondary">
                       {userData.name}
                     </h3>
                   </>
                 ) : (
-                  <div className="hidden lg:flex items-center space-x-4 ">
-                    <div className=" flex ">
+                  <div className="flex items-center">
+                    <Button variant="ghostPrimary" size="wopadding">
+                      <UserIcon className="h-6 w-6 hidden lg:flex" />
+                    </Button>
+                    <div className="flex space-x-2 ml-2">
                       <Button variant="ghostPrimary" size="wopadding">
                         <Link to={data.navbar.auth.login.href}>
                           {data.navbar.auth.login.name}
                         </Link>
                       </Button>
-
                       <div className="mx-2 text-primary">/</div>
                       <Button variant="ghostPrimary" size="wopadding">
                         <Link to={data.navbar.auth.register.href}>
@@ -159,16 +160,16 @@ const Navbar = () => {
                 )}
               </div>
               {dropdownOpen && userData.gravatarUrl && (
-                <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-10">
+                <div className="absolute right-0 mt-2  bg-white rounded-md shadow-lg z-10">
                   <Link
                     to="/profile"
-                    className="block px-4 py-2 text-text-secondary hover:bg-gray-200"
+                    className="block px-4 py-2 text-text-secondary hover:text-primary"
                   >
                     Profil Ayarları
                   </Link>
                   <button
                     onClick={handleLogout}
-                    className="block w-full text-left px-4 py-2 text-text-secondary hover:bg-gray-200"
+                    className="block text-left px-4 py-2 text-text-secondary hover:text-primary"
                   >
                     Çıkış Yap
                   </button>

@@ -10,7 +10,7 @@ export const loginUser = (credentials) => {
       const userData = response.data;
       const userDataWithGravatar = {
         ...userData,
-        gravatarUrl: getGravatarUrl(email),
+        gravatarUrl: getGravatarUrl(credentials.email),
       };
       dispatch(setCurrentUser(userDataWithGravatar));
 

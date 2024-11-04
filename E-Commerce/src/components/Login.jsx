@@ -1,15 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { loginUser } from "../redux/actions/clientActions";
 import { toast } from "react-toastify";
 import { Button } from "@/components/ui/button";
+import "react-toastify/dist/ReactToastify.css";
 import { Input } from "@/components/ui/input";
-import { Checkbox } from "@/components/ui/checkbox";
 
 const LoginForm = () => {
-  const avatar = useSelector((state) => state.client.user.gravatarUrl);
   const {
     register,
     handleSubmit,
@@ -25,7 +24,12 @@ const LoginForm = () => {
   const [isLoading, setIsLoading] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
+  const userData = useSelector((state) => state.client.user);
+  useEffect(() => {
+    if (userData.token) {
+      navigate("/");
+    }
+  }, [userData, navigate]);
   const onSubmit = (data) => {
     setIsLoading(true);
 
@@ -33,7 +37,15 @@ const LoginForm = () => {
     setIsLoading(false);
 
     if (result) {
-      toast.success("Giriş başarılı!");
+      toast.success("Giriş başarılı!", {
+        position: "top-right",
+        autoClose: 3000,
+        style: {
+          fontSize: "14px",
+          padding: "10px",
+          maxWidth: "350px",
+        },
+      });
       navigate("/");
     } else {
       toast.error("Login failed. Please try again.");
@@ -93,9 +105,6 @@ const LoginForm = () => {
       <Button type="submit" className="w-full mt-4" disabled={isLoading}>
         {isLoading ? "Logging in..." : "Login"}
       </Button>
-      {avatar && (
-        <img src={avatar} alt="avatar" className="w-12 h-12 mx-auto" />
-      )}
     </form>
   );
 };

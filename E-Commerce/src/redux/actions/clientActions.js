@@ -51,7 +51,14 @@ export const loginUser = (credentials) => {
     }
   };
 };
-
+export const clearAuthData = () => {
+  localStorage.removeItem("token");
+};
+export const logoutUser = () => (dispatch) => {
+  clearAuthData();
+  dispatch(clearUser());
+  toast.success("Başarıyla çıkış yaptınız.");
+};
 export const SET_USER = "SET_USER";
 export const SET_ROLES = "SET_ROLES";
 export const SET_THEME = "SET_THEME";
