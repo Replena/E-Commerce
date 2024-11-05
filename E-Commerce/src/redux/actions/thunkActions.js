@@ -2,7 +2,12 @@ import { toast } from "react-toastify";
 import { getGravatarUrl } from "../../utils/gravatarUtil";
 import { api } from "@/axios/userFetch";
 import { setCurrentUser } from "./clientActions";
-import { setCategories, setFetchState } from "./productActions";
+import {
+  setCategories,
+  setFetchState,
+  setProductList,
+  setTotal,
+} from "./productActions";
 export const loginUser = (credentials) => {
   return async (dispatch) => {
     try {
@@ -95,6 +100,22 @@ export const fetchCategories = () => (dispatch) => {
     .get("/categories")
     .then((response) => {
       dispatch(setCategories(response.data));
+      dispatch(setFetchState("success"));
+    })
+    .catch((error) => {
+      console.error("Error fetching categories:", error);
+      dispatch(setFetchState("error"));
+    });
+};
+
+export const fetchProducts = () => (dispatch) => {
+  dispatch(setFetchState("loading"));
+
+  return api
+    .get("/products")
+    .then((response) => {
+      dispatch(setProductList(response.data.products));
+      dispatch(setTotal(response.data.total));
       dispatch(setFetchState("success"));
     })
     .catch((error) => {

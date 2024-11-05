@@ -11,7 +11,7 @@ import LoginPage from "./pages/LoginPage.jsx";
 import { ToastContainer } from "react-toastify";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { verifyToken } from "./redux/actions/thunkActions.js";
+import { fetchProducts, verifyToken } from "./redux/actions/thunkActions.js";
 import PrivateRoute from "./components/privateRoute.jsx";
 function App() {
   const dispatch = useDispatch();
@@ -19,24 +19,22 @@ function App() {
   useEffect(() => {
     verifyToken(dispatch);
   }, [dispatch]);
-
+  useEffect(() => {
+    dispatch(fetchProducts());
+  }, []);
   return (
     <div className="flex flex-col min-h-screen">
       <Layout>
         <ToastContainer
           position="top-right"
-          autoClose={3000}
-          hideProgressBar={true}
-          closeOnClick={true}
-          pauseOnHover={true}
-          draggable={false}
-          theme="light"
-          style={{ width: "auto", maxWidth: "400px" }}
-          toastStyle={{
-            fontSize: "14px",
-            padding: "10px",
-            maxWidth: "350px",
-          }}
+          autoClose={2000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
         />
         <Routes>
           <Route path="/" element={<HomePage />} />
