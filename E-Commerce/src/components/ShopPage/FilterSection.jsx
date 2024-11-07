@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { LayoutGrid, List } from "lucide-react";
 import {
   Select,
@@ -21,6 +21,16 @@ const FilterSection = ({
   onSearchChange,
   onFilterClick,
 }) => {
+  const [localSearchText, setLocalSearchText] = useState(searchText);
+
+  const handleSearchChange = (event) => {
+    setLocalSearchText(event.target.value);
+  };
+
+  const handleFilterClick = () => {
+    onFilterClick(localSearchText);
+  };
+
   return (
     <div className="container flex justify-between items-center mb-6">
       <div className="text-sm text-gray-600">
@@ -64,13 +74,13 @@ const FilterSection = ({
         <Input
           type="text"
           placeholder="Filter products..."
-          value={searchText}
-          onChange={onSearchChange}
+          value={localSearchText}
+          onChange={handleSearchChange}
           className="max-w-[200px]"
         />
         <Button
           className="bg-secondary hover:bg-secondary/90 text-white"
-          onClick={onFilterClick}
+          onClick={handleFilterClick}
         >
           Filter
         </Button>
