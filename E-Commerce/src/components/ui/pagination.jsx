@@ -1,6 +1,5 @@
 import * as React from "react";
 import { ChevronLeft, ChevronRight, MoreHorizontal } from "lucide-react";
-
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 
@@ -81,6 +80,69 @@ const PaginationEllipsis = ({ className, ...props }) => (
 );
 PaginationEllipsis.displayName = "PaginationEllipsis";
 
+const Paginate = ({ currentPage, totalPages, onPageChange }) => {
+  const pagesToShow = 2; // İki sayfa ileri ve geri gösterilecek
+  const pageNumbers = [];
+
+  // Sayfa numaralarını belirle
+  for (let i = 1; i <= totalPages; i++) {
+    if (
+      i <= pagesToShow || // İlk 2 sayfa
+      i > totalPages - pagesToShow || // Son 2 sayfa
+      (i >= currentPage - pagesToShow && i <= currentPage + pagesToShow) // Geçerli sayfanın etrafındaki sayfalar
+    ) {
+      pageNumbers.push(i);
+    } else if (pageNumbers[pageNumbers.length - 1] !== "...") {
+      pageNumbers.push("...");
+    }
+  }
+
+  return (
+    <Pagination>
+      <PaginationContent>
+        {currentPage > 1 && (
+          <PaginationItem>
+            <PaginationLink onClick={() => onPageChange(1)}>
+              First
+            </PaginationLink>
+          </PaginationItem>
+        )}
+        {currentPage > 1 && (
+          <PaginationItem>
+            <PaginationPrevious onClick={() => onPageChange(currentPage - 1)} />
+          </PaginationItem>
+        )}
+        {pageNumbers.map((number, index) => (
+          <PaginationItem key={index}>
+            {number === "..." ? (
+              <PaginationEllipsis /> // Nokta nokta
+            ) : (
+              <PaginationLink
+                onClick={() => onPageChange(number)}
+                isActive={currentPage === number}
+              >
+                {number}
+              </PaginationLink>
+            )}
+          </PaginationItem>
+        ))}
+        {currentPage < totalPages && (
+          <PaginationItem>
+            <PaginationNext onClick={() => onPageChange(currentPage + 1)} />
+          </PaginationItem>
+        )}
+        {currentPage < totalPages && (
+          <PaginationItem>
+            <PaginationLink onClick={() => onPageChange(totalPages)}>
+              Last
+            </PaginationLink>
+          </PaginationItem>
+        )}
+      </PaginationContent>
+    </Pagination>
+  );
+};
+
 export {
   Pagination,
   PaginationContent,
@@ -89,4 +151,5 @@ export {
   PaginationLink,
   PaginationNext,
   PaginationPrevious,
+  Paginate, // Paginate bileşenini dışa aktar
 };

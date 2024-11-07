@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import data from "../data/data.json";
 import { Button } from "./ui/button.jsx";
+import data from "../data/data.json";
 import {
   UserIcon,
   MagnifyingGlassIcon,
@@ -25,18 +25,32 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const userData = useSelector((state) => state.client.user);
+  const categories = useSelector((state) => state.product.categories);
   const dispatch = useDispatch();
   const links = data.navbar.links;
   const navigate = useNavigate();
   const updatedLinks = [
     links[0],
-    { name: data.navbar.dropdown.shop.name, href: "/shop" },
+    { name: data.navbar.dropdown.shop.name },
     ...links.slice(1),
   ];
 
   useEffect(() => {
     dispatch(fetchCategories());
   }, [dispatch]);
+
+  const sortCategories = (cats) => {
+    return cats.sort((a, b) => {
+      const codeA = a.code.split(":")[1];
+      const codeB = b.code.split(":")[1];
+      return codeA.localeCompare(codeB);
+    });
+  };
+
+  const groupedCategories = {
+    k: sortCategories(categories.filter((cat) => cat.gender === "k")),
+    e: sortCategories(categories.filter((cat) => cat.gender === "e")),
+  };
 
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev);
@@ -49,6 +63,11 @@ const Navbar = () => {
   const handleLogout = () => {
     dispatch(logoutUser());
     navigate("/");
+  };
+
+  const handleShopClick = (e) => {
+    e.preventDefault();
+    navigate("/shop");
   };
 
   return (
@@ -66,39 +85,47 @@ const Navbar = () => {
               </Button>
             </div>
             <NavigationMenu className="hidden lg:flex items-center">
-              <NavigationMenuList className="flex space-x-8 ">
+              <NavigationMenuList className="flex space-x-8">
                 {updatedLinks.map((link, index) => {
                   if (link.name === data.navbar.dropdown.shop.name) {
                     return (
                       <NavigationMenuItem key={index}>
                         <NavigationMenuTrigger className="text-text-secondary hover:text-primary">
-                          {link.name}
+                          <Link
+                            to="/shop"
+                            onClick={handleShopClick}
+                            className="text-text-secondary hover:text-primary"
+                          >
+                            {link.name}
+                          </Link>
                         </NavigationMenuTrigger>
-                        <NavigationMenuContent className=" p-6">
-                          <div className="flex ">
-                            {Object.keys(data.navbar.dropdown.shop.items).map(
-                              (key, idx) => (
-                                <div key={idx} className="flex-1 mr-20">
-                                  <h3 className="font-bold mb-2">
-                                    {key.charAt(0).toUpperCase() + key.slice(1)}
-                                  </h3>
-                                  <ul className="space-y-1">
-                                    {data.navbar.dropdown.shop.items[key].map(
-                                      (item, itemIndex) => (
-                                        <li key={itemIndex}>
-                                          <Link
-                                            to={item.href}
-                                            className="text-text-secondary hover:text-primary"
-                                          >
-                                            {item.name}
-                                          </Link>
-                                        </li>
-                                      )
-                                    )}
-                                  </ul>
-                                </div>
-                              )
-                            )}
+                        <NavigationMenuContent className="p-6">
+                          <div className="flex">
+                            {["k", "e"].map((gender) => (
+                              <div key={gender} className="flex-1 mr-20">
+                                <h3 className="font-bold mb-2">
+                                  {gender === "k"
+                                    ? data.navbar.dropdown.shop.items
+                                        .categories[0].name
+                                    : data.navbar.dropdown.shop.items
+                                        .categories[1].name}
+                                </h3>
+                                <ul className="space-y-1">
+                                  {groupedCategories[gender].map(
+                                    (category, idx) => (
+                                      <li key={idx}>
+                                        <Link
+                                          to={`/shop/${category.code}`}
+                                          className="text-text-secondary hover:text-primary"
+                                        >
+                                          {category.title}
+                                        </Link>
+                                      </li>
+                                    )
+                                  )}
+                                </ul>
+                              </div>
+                            ))}
                           </div>
                         </NavigationMenuContent>
                       </NavigationMenuItem>
@@ -121,7 +148,7 @@ const Navbar = () => {
             </NavigationMenu>
           </div>
 
-          <div className="flex items-center space-x-4 ">
+          <div className="flex items-center space-x-4">
             <div className="relative">
               <div
                 className="flex items-center cursor-pointer"
@@ -132,7 +159,7 @@ const Navbar = () => {
                     <img
                       src={userData.gravatarUrl}
                       alt={userData.name}
-                      className="w-12 h-12 rounded-full  border-primary"
+                      className="w-12 h-12 rounded-full border-primary"
                     />
                     <h3 className="ml-2 text-text-secondary">
                       {userData.name}
@@ -160,7 +187,7 @@ const Navbar = () => {
                 )}
               </div>
               {dropdownOpen && userData.gravatarUrl && (
-                <div className="absolute right-0 mt-2  bg-white rounded-md shadow-lg z-10">
+                <div className="absolute right-0 mt-2 bg-white rounded-md shadow-lg z-10">
                   <Link
                     to="/profile"
                     className="block px-4 py-2 text-text-secondary hover:text-primary"

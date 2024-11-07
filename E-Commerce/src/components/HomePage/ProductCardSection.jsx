@@ -1,19 +1,24 @@
-import data from "../../data/data.json";
+import { useSelector } from "react-redux";
 import Products from "../Products.jsx";
+
 function ProductCardSection() {
+  const { total } = useSelector((state) => state.product);
   const itemsPerPage = 8;
   const currentPage = 1;
+  const viewMode = "grid"; // Bu sayfa için grid görünümünü belirledik
+
   return (
     <div className="container">
       <div className="my-20 text-center text-text-secondary">
-        <p className="text-xl">{data.productCard.muted}</p>
-        <p className="text-text-default text-2xl">{data.productCard.title}</p>
-        <p>{data.productCard.subtitle}</p>
+        <p className="text-xl">Our Products</p>
+        <p className="text-text-default text-2xl">Featured Products</p>
+        <p>Total Products: {total}</p>
       </div>
-      <div className="">
+      <div>
         <Products
           itemsPerPage={itemsPerPage}
           currentPage={currentPage}
+          viewMode={viewMode}
           showColors={true}
         />
       </div>

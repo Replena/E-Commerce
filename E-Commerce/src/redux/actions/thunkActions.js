@@ -2,7 +2,12 @@ import { toast } from "react-toastify";
 import { getGravatarUrl } from "../../utils/gravatarUtil";
 import { api } from "@/axios/userFetch";
 import { setCurrentUser } from "./clientActions";
-import { setCategories, setFetchState } from "./productActions";
+import {
+  setCategories,
+  setFetchState,
+  setProductList,
+  setTotal,
+} from "./productActions";
 export const loginUser = (credentials) => {
   return async (dispatch) => {
     try {
@@ -102,3 +107,32 @@ export const fetchCategories = () => (dispatch) => {
       dispatch(setFetchState("error"));
     });
 };
+
+export const fetchProducts =
+  (queryString = "") =>
+  async (dispatch, getState) => {
+    dispatch(setFetchState("loading"));
+
+    const { filter, sort, limit, offset } = getState().product;
+    const params = new URLSearchParams();
+
+    if (filter) params.append("filter", filter);
+    if (sort) params.append("sort", sort);
+    if (limit) params.append("limit", limit);
+    if (offset) params.append("offset", offset);
+
+    // queryString eklemeyi unutmamalıyız
+    const endpoint = queryString
+      ? `/products?${queryString}&${params.toString()}`
+      : `/products?${params.toString()}`;
+
+    try {
+      const response = await api.get(endpoint);
+      dispatch(setProductList(response.data.products));
+      dispatch(setTotal(response.data.total));
+      dispatch(setFetchState("success"));
+    } catch (error) {
+      console.error("Error fetching products:", error);
+      dispatch(setFetchState("error"));
+    }
+  };

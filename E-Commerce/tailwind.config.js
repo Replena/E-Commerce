@@ -13,6 +13,7 @@ export default {
         red: "#E74040",
         lightGray: "#E6E6E6",
         yellow: "#F3CD03",
+        lightbg: "#FAFAFA",
         text: {
           default: "#252B42",
           secondary: "#737373",
