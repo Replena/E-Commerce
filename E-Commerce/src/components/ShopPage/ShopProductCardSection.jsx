@@ -39,7 +39,7 @@ function ShopProductCardSection() {
 
     const queryString = {
       sort: urlSort || sortState,
-      offset: (currentPage - 1) * 12,
+      offset: (currentPage - 1) * 25, // Adjusted for your default limit of 25
       search: urlFilter || filterText,
     };
 
@@ -51,8 +51,9 @@ function ShopProductCardSection() {
   }, [dispatch, location, categoryId, currentPage, filterText, sortState]);
 
   const handlePageChange = (pageNumber) => {
+    if (pageNumber < 1 || pageNumber > Math.ceil(total / 25)) return; // Prevent going out of bounds
     setCurrentPage(pageNumber);
-    dispatch(setOffset((pageNumber - 1) * 12));
+    dispatch(setOffset((pageNumber - 1) * 25));
   };
 
   const handleSortChange = (value) => {
@@ -78,7 +79,7 @@ function ShopProductCardSection() {
     );
   };
 
-  const totalPages = Math.ceil(total / 12);
+  const totalPages = Math.ceil(total / 25);
 
   return (
     <div className="container">
