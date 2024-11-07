@@ -1,16 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import ShopShopCard from "./ShopShopCard";
 
 const ShopShopCards = () => {
+  const [topRatedProducts, setTopRatedProducts] = useState([]);
   const products = useSelector((state) => state.product.productList);
 
-  const topRatedProducts = [...products]
-    .sort((a, b) => b.rating - a.rating)
-    .slice(0, 5);
+  useEffect(() => {
+    if (products.length > 0) {
+      const topRated = [...products]
+        .sort((a, b) => b.rating - a.rating)
+        .slice(0, 5);
+      setTopRatedProducts(topRated);
+    }
+  }, [products]);
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 container">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
       {topRatedProducts.map((product) => (
         <ShopShopCard
           key={product.id}

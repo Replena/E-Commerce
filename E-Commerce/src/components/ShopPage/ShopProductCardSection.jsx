@@ -20,6 +20,7 @@ function ShopProductCardSection() {
 
   const queryParams = new URLSearchParams(location.search);
   const categoryId = location.pathname.split("/")[3];
+
   useEffect(() => {
     const urlFilter = queryParams.get("filter");
     const urlSort = queryParams.get("sort");
@@ -64,12 +65,13 @@ function ShopProductCardSection() {
     setFilterText(e.target.value);
   };
 
-  const handleFilterClick = () => {
+  const handleFilterClick = (searchTerm) => {
+    setFilterText(searchTerm);
     setCurrentPage(1);
-    dispatch(setFilter(filterText));
+    dispatch(setFilter(searchTerm));
     dispatch(setOffset(0));
     navigate(
-      `?filter=${filterText}&sort=${sort}${
+      `?filter=${searchTerm}&sort=${sort}${
         categoryId ? `&category=${categoryId}` : ""
       }`
     );
