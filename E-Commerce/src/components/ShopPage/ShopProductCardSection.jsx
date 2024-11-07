@@ -12,14 +12,19 @@ function ShopProductCardSection() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const { productList, filter, total } = useSelector((state) => state.product);
+  const { productList, filter, total, categories, sort } = useSelector(
+    (state) => state.product
+  );
   const [currentPage, setCurrentPage] = useState(1);
   const [viewMode, setViewMode] = useState("grid");
-  const [sort, setSort] = useState("");
-  const [filterText, setFilterText] = useState("");
+  const [sortState, setSortState] = useState(sort || "");
+  const [filterText, setFilterText] = useState(filter || "");
 
   const queryParams = new URLSearchParams(location.search);
-  const categoryId = location.pathname.split("/")[3];
+  const pathSegments = location.pathname.split("/");
+  const gender = pathSegments[2];
+  const categoryName = pathSegments[3];
+  const categoryId = pathSegments[4];
 
   useEffect(() => {
     const urlFilter = queryParams.get("filter");
@@ -29,11 +34,11 @@ function ShopProductCardSection() {
       setFilterText(urlFilter);
     }
     if (urlSort) {
-      setSort(urlSort);
+      setSortState(urlSort);
     }
 
     const queryString = {
-      sort: urlSort || sort,
+      sort: urlSort || sortState,
       offset: (currentPage - 1) * 12,
       search: urlFilter || filterText,
     };
@@ -43,7 +48,7 @@ function ShopProductCardSection() {
     }
 
     dispatch(fetchProducts(new URLSearchParams(queryString).toString()));
-  }, [dispatch, location, categoryId, currentPage, filterText, sort]);
+  }, [dispatch, location, categoryId, currentPage, filterText, sortState]);
 
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
@@ -51,13 +56,11 @@ function ShopProductCardSection() {
   };
 
   const handleSortChange = (value) => {
-    setSort(value);
+    setSortState(value);
     setCurrentPage(1);
     dispatch(setOffset(0));
     navigate(
-      `?filter=${filterText}&sort=${value}${
-        categoryId ? `&category=${categoryId}` : ""
-      }`
+      `/shop/${gender}/${categoryName}/${categoryId}?filter=${filterText}&sort=${value}`
     );
   };
 
@@ -71,9 +74,7 @@ function ShopProductCardSection() {
     dispatch(setFilter(searchTerm));
     dispatch(setOffset(0));
     navigate(
-      `?filter=${searchTerm}&sort=${sort}${
-        categoryId ? `&category=${categoryId}` : ""
-      }`
+      `/shop/${gender}/${categoryName}/${categoryId}?filter=${searchTerm}&sort=${sortState}`
     );
   };
 
@@ -86,7 +87,7 @@ function ShopProductCardSection() {
         displayedItemsCount={productList.length}
         viewMode={viewMode}
         setViewMode={setViewMode}
-        sortOption={sort}
+        sortOption={sortState}
         onSortChange={handleSortChange}
         searchText={filterText}
         onSearchChange={handleFilterChange}

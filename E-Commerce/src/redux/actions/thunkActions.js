@@ -121,7 +121,6 @@ export const fetchProducts =
     if (limit) params.append("limit", limit);
     if (offset) params.append("offset", offset);
 
-    // queryString eklemeyi unutmamalıyız
     const endpoint = queryString
       ? `/products?${queryString}&${params.toString()}`
       : `/products?${params.toString()}`;
