@@ -18,21 +18,14 @@
       "shop": {
         "name": "Shop",
         "items": {
-          "kadın": [
-            { "name": "Bags", "href": "#" },
-            { "name": "Belts", "href": "#" },
-            { "name": "Cosmetics", "href": "#" },
-            { "name": "Hats", "href": "#" }
-          ],
-          "erkek": [
-            { "name": "Bags", "href": "#" },
-            { "name": "Belts", "href": "#" },
-            { "name": "Cosmetics", "href": "#" },
-            { "name": "Hats", "href": "#" }
+          "categories": [
+            { "name": "Kadın", "gender": "k" },
+            { "name": "Erkek", "gender": "e" }
           ]
         }
       }
-    },
+    }
+  ,
     "auth": {
       "login": { "name": "Login", "href": "/login" },
       "register": { "name": "Register", "href": "/signup" }

@@ -1,58 +1,71 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Products from "../Products.jsx";
-import {
-  Pagination,
-  PaginationContent,
-  PaginationItem,
-  PaginationLink,
-} from "../ui/pagination.jsx";
-import data from "../../data/data.json";
+import PaginationComponent from "./PaginationComponent.jsx";
+import { useSelector, useDispatch } from "react-redux";
+import FilterSection from "./FilterSection.jsx";
+import { setFilter, setOffset } from "../../redux/actions/productActions";
+import { fetchProducts } from "@/redux/actions/thunkActions.js";
 
 function ShopProductCardSection() {
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 12;
-  const totalItems = data.product.length;
-  const totalPages = Math.ceil(totalItems / itemsPerPage);
+  const [sort, setSort] = useState("");
+  const [filterText, setFilterText] = useState("");
+  const dispatch = useDispatch();
+  const { productList, filter, total } = useSelector((state) => state.product);
+  const [viewMode, setViewMode] = useState("grid");
+
+  useEffect(() => {
+    const queryString = {
+      sort,
+      offset: (currentPage - 1) * 12,
+      search: filterText || filter,
+    };
+
+    dispatch(fetchProducts(new URLSearchParams(queryString).toString()));
+  }, [dispatch, sort, filterText, currentPage, filter]);
 
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    dispatch(setOffset((pageNumber - 1) * 12));
   };
+
+  const handleFilterChange = (e) => {
+    setFilterText(e.target.value);
+  };
+
+  const handleFilterClick = () => {
+    dispatch(setFilter(filterText));
+    dispatch(setOffset(0));
+    setCurrentPage(1);
+  };
+
+  const handleSortChange = (value) => {
+    setSort(value);
+    dispatch(setOffset(0));
+    setCurrentPage(1);
+  };
+
+  const totalPages = Math.ceil(total / 12);
 
   return (
     <div className="container">
-      <Products itemsPerPage={itemsPerPage} currentPage={currentPage} />
-
-      <Pagination className="my-5">
-        <PaginationContent>
-          {currentPage > 1 && (
-            <PaginationItem>
-              <PaginationLink onClick={() => handlePageChange(1)}>
-                First
-              </PaginationLink>
-            </PaginationItem>
-          )}
-
-          {[...Array(totalPages)].map((_, index) => (
-            <PaginationItem key={index}>
-              <PaginationLink
-                onClick={() => handlePageChange(index + 1)}
-                isActive={currentPage === index + 1}
-              >
-                {index + 1}
-              </PaginationLink>
-            </PaginationItem>
-          ))}
-
-          {currentPage < totalPages && (
-            <PaginationItem>
-              <PaginationLink onClick={() => handlePageChange(totalPages)}>
-                Last
-              </PaginationLink>
-            </PaginationItem>
-          )}
-        </PaginationContent>
-      </Pagination>
+      <FilterSection
+        totalItems={total}
+        displayedItemsCount={productList.length}
+        viewMode={viewMode}
+        setViewMode={setViewMode}
+        sortOption={sort}
+        onSortChange={handleSortChange}
+        searchText={filterText}
+        onSearchChange={handleFilterChange}
+        onFilterClick={handleFilterClick}
+      />
+      <Products viewMode={viewMode} productList={productList} />
+      <PaginationComponent
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onPageChange={handlePageChange}
+      />
     </div>
   );
 }

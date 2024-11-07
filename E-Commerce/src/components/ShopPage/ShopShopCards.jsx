@@ -1,15 +1,22 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import ShopShopCard from "./ShopShopCard";
 
-const ShopShopCards = ({ data }) => {
+const ShopShopCards = () => {
+  const products = useSelector((state) => state.product.productList);
+
+  const topRatedProducts = [...products]
+    .sort((a, b) => b.rating - a.rating)
+    .slice(0, 5);
+
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 container">
-      {data.shop.map((product) => (
+      {topRatedProducts.map((product) => (
         <ShopShopCard
           key={product.id}
-          image={product.image}
-          title={product.title}
-          items={product.items}
+          image={product.images[0].url}
+          title={product.name}
+          items={product.sell_count}
         />
       ))}
     </div>

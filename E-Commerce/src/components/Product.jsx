@@ -10,8 +10,12 @@ const Product = ({ product }) => {
   };
 
   return (
-    <div className="bg-text-light text-center flex flex-col min-h-[400px]">
-      <img src={product.images[0]?.url} alt={product.name} className="w-full" />
+    <div className="bg-text-light text-center flex flex-col">
+      <img
+        src={product.images[0]?.url}
+        alt={product.name}
+        className="w-full object-cover"
+      />
       <div className="p-4 flex-grow flex flex-col justify-between">
         <h3 className="text-lg font-bold">{product.name}</h3>
         <p className="text-secondary line-clamp-3">{product.description}</p>
