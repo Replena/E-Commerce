@@ -1,32 +1,63 @@
 import React, { useState, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import Products from "../Products.jsx";
 import PaginationComponent from "./PaginationComponent.jsx";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import FilterSection from "./FilterSection.jsx";
 import { setFilter, setOffset } from "../../redux/actions/productActions";
 import { fetchProducts } from "@/redux/actions/thunkActions.js";
 
 function ShopProductCardSection() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const { productList, filter, total } = useSelector((state) => state.product);
   const [currentPage, setCurrentPage] = useState(1);
+  const [viewMode, setViewMode] = useState("grid");
   const [sort, setSort] = useState("");
   const [filterText, setFilterText] = useState("");
-  const dispatch = useDispatch();
-  const { productList, filter, total } = useSelector((state) => state.product);
-  const [viewMode, setViewMode] = useState("grid");
 
+  const queryParams = new URLSearchParams(location.search);
+  const categoryId = location.pathname.split("/")[3];
   useEffect(() => {
+    const urlFilter = queryParams.get("filter");
+    const urlSort = queryParams.get("sort");
+
+    if (urlFilter) {
+      setFilterText(urlFilter);
+    }
+    if (urlSort) {
+      setSort(urlSort);
+    }
+
     const queryString = {
-      sort,
+      sort: urlSort || sort,
       offset: (currentPage - 1) * 12,
-      search: filterText || filter,
+      search: urlFilter || filterText,
     };
 
+    if (categoryId && categoryId !== "undefined") {
+      queryString.category = categoryId;
+    }
+
     dispatch(fetchProducts(new URLSearchParams(queryString).toString()));
-  }, [dispatch, sort, filterText, currentPage, filter]);
+  }, [dispatch, location, categoryId, currentPage, filterText, sort]);
 
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
     dispatch(setOffset((pageNumber - 1) * 12));
+  };
+
+  const handleSortChange = (value) => {
+    setSort(value);
+    setCurrentPage(1);
+    dispatch(setOffset(0));
+    navigate(
+      `?filter=${filterText}&sort=${value}${
+        categoryId ? `&category=${categoryId}` : ""
+      }`
+    );
   };
 
   const handleFilterChange = (e) => {
@@ -34,15 +65,14 @@ function ShopProductCardSection() {
   };
 
   const handleFilterClick = () => {
+    setCurrentPage(1);
     dispatch(setFilter(filterText));
     dispatch(setOffset(0));
-    setCurrentPage(1);
-  };
-
-  const handleSortChange = (value) => {
-    setSort(value);
-    dispatch(setOffset(0));
-    setCurrentPage(1);
+    navigate(
+      `?filter=${filterText}&sort=${sort}${
+        categoryId ? `&category=${categoryId}` : ""
+      }`
+    );
   };
 
   const totalPages = Math.ceil(total / 12);
